@@ -20,3 +20,4 @@ setenv("NWCHEM", base)
 setenv("NWCHEM_BASIS_LIBRARY", pathJoin(base, "libraries"))
 setenv("NWCHEM_NWPW_LIBRARY", pathJoin(base, "libraryps"))
 
+family("nwchem")

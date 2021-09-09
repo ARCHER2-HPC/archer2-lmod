@@ -16,18 +16,16 @@ the SAFE. see:
 Installed by: A. Turner, EPCC
 Date: 25 September 2021
 ]])
+
+local pkgNameVer = myModuleFullName()
+local base = pathJoin("/work/y07/shared/apps", pkgNameVer, "core")
  
+prepend_path("PATH", pathJoin(base, "bin"))
  
-local version = "20.11"
-local basepath = pathJoin("/work/y07/shared/apps/castep", version, "bin")
- 
-prepend_path("PATH", basepath)
- 
-setenv("CASTEP_UTILS", basepath)
+setenv("CASTEP_UTILS", pathJoin(base, "bin"))
 setenv("CASTEP_TMPDIR", ".")
-setenv("CASTEP", basepath)
-setenv("CASTEP_EXE", pathJoin(basepath, "castep.mpi"))
-setenv("CASTEP_MODULE", pathJoin(myModuleFullName()))
- 
--- Only one module from a "family" can be loaded concurrently
+setenv("CASTEP", base)
+setenv("CASTEP_EXE", pathJoin(base, "bin/castep.mpi"))
+setenv("CASTEP_MODULE", myModuleFullName())
+
 family("castep")
