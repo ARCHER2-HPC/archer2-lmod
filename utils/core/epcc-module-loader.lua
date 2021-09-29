@@ -12,5 +12,5 @@ directly in the module collection definition
    Installed by: Philip Cass, EPCC
 ]])
 
-always_load("/work/y07/shared/archer2-modules/modulefiles-cse/epcc-setup-env")
+always_load("/work/y07/shared/archer2-lmod/internal/epcc-setup-env")
 
