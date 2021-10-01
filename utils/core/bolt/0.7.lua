@@ -13,6 +13,6 @@ the options.
 local base = "/work/y07/shared/bolt/0.7"
 
 setenv("BOLT_DIR", base)
-prepend_path("PYTHONPATH", pathJoin(base, "modules")
-prepend_path("PATH", pathJoin(base, "bin")
+prepend_path("PYTHONPATH", pathJoin(base, "modules"))
+prepend_path("PATH", pathJoin(base, "bin"))
 
