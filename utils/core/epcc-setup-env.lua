@@ -16,6 +16,7 @@ prepend_path("MODULEPATH", "/work/y07/shared/archer2-lmod/apps/core")
 prepend_path("MODULEPATH", "/work/y07/shared/archer2-lmod/libs/core")
 prepend_path("MODULEPATH", "/work/y07/shared/archer2-lmod/python/core")
 prepend_path("MODULEPATH", "/work/y07/shared/archer2-lmod/python/pyenvs")
+prepend_path("MODULEPATH", "/work/y07/shared/archer2-lmod/training/core")
 
 -- Make defaqult binaries/scripts available
 prepend_path("PATH", "/work/y07/shared/utils/core/bin")
