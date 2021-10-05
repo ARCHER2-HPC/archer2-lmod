@@ -18,12 +18,13 @@ prepend_path("MODULEPATH", "/work/y07/shared/archer2-lmod/python/core")
 prepend_path("MODULEPATH", "/work/y07/shared/archer2-lmod/python/pyenvs")
 prepend_path("MODULEPATH", "/work/y07/shared/archer2-lmod/training/core")
 
--- Make defaqult binaries/scripts available
+-- Make default binaries/scripts available
 prepend_path("PATH", "/work/y07/shared/utils/core/bin")
 
 -- Set any env vars
 setenv("OMP_NUM_THREADS", "1")
-setenv("SBATCH_EXPORT", "MODULEPATH,SBATCH_EXPORT")
+--setenv("SBATCH_EXPORT", "MODULEPATH,SBATCH_EXPORT")
+setenv("SBATCH_EXPORT", "SBATCH_EXPORT")
 setenv("SLURM_EXPORT_ENV", "all")
 setenv("EPCC_SINGULARITY_DIR", "/work/y07/shared/singularity-images")
 

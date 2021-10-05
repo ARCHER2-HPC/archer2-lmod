@@ -10,9 +10,10 @@ the options.
   * Date: 29 Septemeber 2021\n"
 ]])
 
-local base = "/work/y07/shared/bolt/0.7"
+local pkgNameVer = myModuleFullName()
+local pkgVersionBase = pathJoin("/work/y07/shared/utils/core", pkgNameVer)
 
-setenv("BOLT_DIR", base)
-prepend_path("PYTHONPATH", pathJoin(base, "modules"))
-prepend_path("PATH", pathJoin(base, "bin"))
+setenv("BOLT_DIR", pkgVersionBase)
+prepend_path("PATH", pathJoin(pkgVersionBase, "bin"))
+prepend_path("PYTHONPATH", pathJoin(pkgVersionBase, "modules"))
 
