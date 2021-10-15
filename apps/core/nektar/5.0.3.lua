@@ -5,7 +5,7 @@ Nektar++ is a spectral/hp element framework designed to support the construction
 for a wide range of partial differential equations, see https://www.nektar.info .
 
 This module sets up your environment to access the Nektar++ solvers and libraries.
-Nektar++ was built with GCC 11.2.0 (CPE 21.09); it uses Cray MICH 8.1.9 (OFI), Cray FFTW 3.3.8.11
+Nektar++ was built with GCC 11.2.0 (CPE 21.09); it uses Cray MICH 8.1.9, Cray FFTW 3.3.8.11
 and Cray LibSci 21.08.1.2 .
 
    - Installed by: M. Bareford, EPCC"
