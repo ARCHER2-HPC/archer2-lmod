@@ -7,7 +7,7 @@ see https://www.ks.uiuc.edu/Research/namd/ .
 This NAMD 2.14 has been built with SMP support, which introduces a dedicated communication thread for every process. 
 
 This module sets up your environment to access NAMD 2.14 - the executable file is called namd2.
-NAMD 2.14 was built with GCC 11.2.0 (CPE 21.09); it uses Cray MICH 8.1.9 (OFI), Cray FFTW 3.3.8.11,
+NAMD 2.14 was built with GCC 11.2.0 (CPE 21.09); it uses Cray MICH 8.1.9, Cray FFTW 3.3.8.11,
 TCL 8.5.9 and Charm++ 6.10.2.
 
    - Installed by: M. Bareford, EPCC"
