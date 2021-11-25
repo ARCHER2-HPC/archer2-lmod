@@ -10,7 +10,7 @@ local pkgNameBase = pathJoin("/work/y07/shared/libs/core", pkgName)
 local pkgVersionBase = pathJoin("/work/y07/shared/libs/core", pkgNameVer)
 
 local arch = "intel64"
-local mkl_root = pathJoin(pkgVersionBase, "compilers_and_libraries/linux/mkl")
+local mkl_root = pkgVersionBase
 
 setenv("MKLROOT", mkl_root)
 

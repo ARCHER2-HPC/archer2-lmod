@@ -17,7 +17,7 @@ local base = pathJoin("/work/y07/shared/apps/core", pkgNameVer)
 prepend_path("PATH", pathJoin(base, "bin/LINUX64"))
  
 setenv("NWCHEM", base)
-setenv("NWCHEM_BASIS_LIBRARY", pathJoin(base, "libraries/"))
-setenv("NWCHEM_NWPW_LIBRARY", pathJoin(base, "libraryps/"))
+setenv("NWCHEM_BASIS_LIBRARY", pathJoin(base, "libraries") .. '/')
+setenv("NWCHEM_NWPW_LIBRARY", pathJoin(base, "libraryps") .. '/')
 
 family("nwchem")

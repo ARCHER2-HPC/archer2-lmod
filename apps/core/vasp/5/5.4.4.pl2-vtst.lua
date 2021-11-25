@@ -3,7 +3,10 @@ VASP 5.4.4.pl2
 ==============
 
 This module sets up your environment to
-access VASP 5.4.4.pl2
+access VASP 5.4.4.pl2 with the VTST 
+tools:
+
+ https://theory.cm.utexas.edu/vtsttools/index.html
 
 Once this module has been loaded you can
 access the VASP 5.4.4 executables as:
@@ -11,6 +14,9 @@ access the VASP 5.4.4 executables as:
  *'vasp_std'       - Multiple k-point (complex) version
  *'vasp_gam'       - Gamma-point only version
  *'vasp_ncl'       - Multiple k-point, noncollinear version
+
+The VTST scripts are also available as described in
+the VTST documentation.
 
 If you are only interested in the gamma-point, the
 gamma-point version of the code runs about 30-50%
@@ -21,13 +27,12 @@ SAFE. see:
 
   * https://epcced.github.io/safe-docs/safe-for-users/#how-to-request-access-to-a-package-group
 
-   Compiled: 1 October 2021"
+   Compiled: 19 October 2021"
    Maintained by: A. R. Turner, EPCC"
 ]])
 
 load("PrgEnv-gnu")
 load("cpe/21.09")
-prepend_path("LD_LIBRARY_PATH", os.getenv("CRAY_LD_LIBRARY_PATH"))
 
 local pkgName = myModuleName()
 local pkgNameVer = myModuleFullName()

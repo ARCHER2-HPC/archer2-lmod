@@ -19,6 +19,8 @@ Date: 25 September 2021
 
 local pkgNameVer = myModuleFullName()
 local base = pathJoin("/work/y07/shared/apps/core", pkgNameVer)
+
+load("mkl/19.5-281")
  
 prepend_path("PATH", pathJoin(base, "bin"))
  
