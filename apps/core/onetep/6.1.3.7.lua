@@ -22,6 +22,6 @@ local pkgVersionBase = pathJoin("/work/y07/shared/apps/core", pkgNameVer)
  
 prepend_path("PATH", pathJoin(pkgVersionBase, "bin"))
 
-setenv("PSPOT_DIR", pathJoin(pkgNameBase, "pseudo"))
+setenv("PSPOT_DIR", pathJoin(pkgVersionBase, "pseudo"))
 
 family("onetep")
