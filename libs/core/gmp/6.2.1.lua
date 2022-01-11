@@ -13,9 +13,9 @@ local productLevel = myModuleVersion()
 
 local help1 = "GMP version " .. productLevel .. "\n"
 local help2 = "For details of GMP see:  \n"
-local help3 = "https://www.gnu.org/software/gmp/"
-
-help ( help1 .. help2 .. help3 )
+local help3 = "https://www.gnu.org/software/gmp/\n\n"
+local help4 = "Build instructions: https://github.com/hpc-uk/build-instructions/blob/main/libs/gmp/build_gmp_6.2.1_archer2.md "
+help ( help1 .. help2 .. help3 .. help4 )
 
 
 -- EPCC FUNCTIONS

@@ -1,8 +1,9 @@
 help([[
 tensorflow
 ==========
-
 https://www.tensorflow.org/
+
+Build instructions: https://github.com/hpc-uk/build-instructions/blob/main/pyenvs/tensorflow/build_tensorflow_2.7.0_archer2.md
 
   Installed by: Michael Bareford, EPCC
   Date: 13 December 2021

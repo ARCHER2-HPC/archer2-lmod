@@ -13,9 +13,9 @@ local productLevel = myModuleVersion()
 
 local help1 = "GSL version " .. productLevel .. "\n"
 local help2 = "For details of GSL see:  \n"
-local help3 = "https://www.gnu.org/software/gsl/"
-
-help ( help1 .. help2 .. help3 )
+local help3 = "https://www.gnu.org/software/gsl/\n\n"
+local help4 = "Build instructions: https://github.com/hpc-uk/build-instructions/blob/main/libs/gsl/build_gsl_2.7_archer2.md "
+help ( help1 .. help2 .. help3 .. help4 )
 
 
 -- EPCC FUNCTIONS

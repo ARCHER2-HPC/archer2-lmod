@@ -22,7 +22,6 @@ prepend_path("MODULEPATH", "/work/y07/shared/archer2-lmod/training/core")
 prepend_path("PATH", "/work/y07/shared/utils/core/bin")
 
 -- Set any env vars
-setenv("OMP_NUM_THREADS", "1")
 --setenv("SBATCH_EXPORT", "MODULEPATH,SBATCH_EXPORT")
 setenv("SBATCH_EXPORT", "SBATCH_EXPORT")
 setenv("SLURM_EXPORT_ENV", "all")

@@ -9,15 +9,15 @@ Tools to analyse usage of HPC systems.
 ]])
 
 load("cray-python")
-load("python-plotting")
+load("matplotlib")
+load("seaborn")
 
 local pkgNameVer = myModuleFullName()
 local pkgVersionBase = pathJoin("/work/y07/shared/utils/core", pkgNameVer)
 
-prepend_path("PATH", pathJoin(pkgVersionBase, "bin"))
+prepend_path("PATH", pathJoin(pkgVersionBase, "usage-analysis/bin"))
 prepend_path("PYTHONPATH", pathJoin(pkgVersionBase, "python/lib/python3.8/site-packages"))
 prepend_path("PYTHONPATH", pathJoin(pkgVersionBase, "usage-analysis/python-modules"))
 
-setenv("SCUA_BASE", pathJoin(pkgVersionBase)
+setenv("SCUA_BASE", pathJoin(pkgVersionBase, "usage-analysis"))
 
-family("usage-analysis")

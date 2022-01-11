@@ -8,6 +8,8 @@ This module sets up your environment to access the Nektar++ solvers and librarie
 Nektar++ was built with GCC 11.2.0 (CPE 21.09); it uses Cray MICH 8.1.9, Cray FFTW 3.3.8.11
 and Cray LibSci 21.08.1.2 .
 
+https://github.com/hpc-uk/build-instructions/blob/main/apps/nektarplusplus/build_nektarplusplus_5.0.3_archer2_gcc11_cmpich8.md
+
    - Installed by: M. Bareford, EPCC"
    - Date: 15 October 2021\n"
 ]])

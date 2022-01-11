@@ -6,6 +6,8 @@ SCons is a modern software construction tool - a software utility for building s
 
 https://pypi.org/project/SCons/
 
+Build instructions: https://github.com/hpc-uk/build-instructions/blob/main/pyenvs/scons/build_scons_4.3.0_archer2.md
+
   Installed by: Michael Bareford, EPCC
   Date: 20 December 2021
 ]])

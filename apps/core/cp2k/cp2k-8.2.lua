@@ -11,8 +11,6 @@ This module also sets the CP2K_DATA directory.
 
 load("PrgEnv-gnu")
 load("cpe/21.09")
-load("craype-network-ucx")
-load("cray-mpich-ucx")
 load("mkl/19.5-281")
 
 local pkgName = myModuleName()

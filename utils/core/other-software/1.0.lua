@@ -1,17 +1,17 @@
 help([[
-Access externally-provided software
-===================================
+
+Externally-provided software
+============================
 
 This module enables access to software installed on ARCHER2
-by external parties. The ARCHER2 service desk does not provide
-support for these software packages.
+by external parties. ARCHER2 service desk does not provide support for these
+software packages.
 
-  Installed: 4 October 2021"
-  Installed by: Andy Turner, EPCC"
+        Installed: 25 November 2021
+        Installed by: Andy Turner, EPCC
+
 ]])
 
-prepend_path("MODULEPATH", "/work/y07/shared/archer2-lmod/other/core")
-prepend_path("MODULEPATH", "/work/c01/shared/modulefiles"))
 
 LmodMessage([[
 
@@ -24,3 +24,5 @@ service and they may direct you to seek help from external parties.
 
 ]])
 
+prepend_path("MODULEPATH", "/work/y07/shared/archer2-lmod/others/core")
+ 
