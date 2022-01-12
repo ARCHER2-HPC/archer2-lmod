@@ -172,6 +172,10 @@ else
   prepend_path(string.upper(productName) .. "_DIR",  productPath)
   prepend_path(string.upper(productName) .. "_ROOT", productPath)
 
+  prepend_path("LD_LIBRARY_PATH", pathJoin(productPath, "lib"))
+  prepend_path("LIBRARY_PATH", pathJoin(productPath, "lib"))
+  prepend_path("CPATH", pathJoin(productPath, "include"))
+
   -- pkgconfig location
 
   local pkgconfig = pathJoin(productPath, "lib/pkgconfig")
