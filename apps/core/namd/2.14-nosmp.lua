@@ -10,7 +10,7 @@ This module sets up your environment to access NAMD 2.14 - the executable file i
 NAMD 2.14 was built with GCC 11.2.0 (CPE 21.09); it uses Cray MICH 8.1.9, Cray FFTW 3.3.8.11,
 TCL 8.5.9 and Charm++ 6.10.2.
 
-https://github.com/hpc-uk/build-instructions/blob/main/apps/NAMD/build_namd_2.14_archer2_gcc11_cmpich8.md
+Build instructions: https://github.com/hpc-uk/build-instructions/blob/main/apps/NAMD/build_namd_2.14_archer2_gcc11_cmpich8.md
 
    - Installed by: M. Bareford, EPCC"
    - Date: 15 October 2021\n"
