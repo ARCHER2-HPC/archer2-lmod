@@ -25,4 +25,5 @@ service and they may direct you to seek help from external parties.
 ]])
 
 prepend_path("MODULEPATH", "/work/y07/shared/archer2-lmod/others/core")
+prepend_path("MODULEPATH", "/work/y23/shared/scalasca/modulefiles")
  
