@@ -20,6 +20,5 @@ prepend_path("LIBRARY_PATH", pathJoin(mkl_root, "lib", arch))
 prepend_path("FPATH", pathJoin(mkl_root, "include"))
 prepend_path("CPATH", pathJoin(mkl_root, "include"))
 prepend_path("NLSPATH", pathJoin(mkl_root, "lib", arch))
-prepend_path("LD_PRELOAD", pathJoin(mkl_root, "preload/libamdmkl.so"))
 
 family("mkl")

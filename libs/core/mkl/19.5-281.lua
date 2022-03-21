@@ -20,6 +20,5 @@ prepend_path("LIBRARY_PATH", pathJoin(mkl_root, "lib", arch))
 prepend_path("FPATH", pathJoin(mkl_root, "include"))
 prepend_path("CPATH", pathJoin(mkl_root, "include"))
 prepend_path("NLSPATH", pathJoin(mkl_root, "lib", arch))
-setenv("MKL_DEBUG_CPU_TYPE", "5")
 
 family("mkl")
