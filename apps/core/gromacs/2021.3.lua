@@ -14,6 +14,7 @@ by using the 'gmx' command.
 
 load("PrgEnv-gnu")
 load("cpe/21.09")
+prepend_path("LD_LIBRARY_PATH", os.getenv("CRAY_LD_LIBRARY_PATH"))
 
 local pkgName = myModuleName()
 local pkgNameVer = myModuleFullName()
