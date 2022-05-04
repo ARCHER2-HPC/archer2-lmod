@@ -6,8 +6,8 @@ Gnuplot is a portable command-line driven graphing utility.
 
 See http://www.gnuplot.info/ .
 
-  Installed by: J. Sindt, EPCC
-  Date: 23 Nov. 2021
+  Installed by: D. Henty, EPCC
+  Date: 27 Apr. 2022
 ]])
 
 local pkgName = myModuleName()

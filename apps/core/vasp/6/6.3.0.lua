@@ -32,8 +32,13 @@ local pkgNameBase = pathJoin("/work/y07/shared/apps/core", pkgName)
 local pkgVersionBase = pathJoin("/work/y07/shared/apps/core", pkgNameVer)
 
 load("PrgEnv-gnu")
+load("cpe/21.09")
 unload("cray-libsci")
+load("craype-network-ucx")
+load("cray-mpich-ucx")
+prepend_path("LD_LIBRARY_PATH", os.getenv("CRAY_LD_LIBRARY_PATH"))
 prepend_path("LD_LIBRARY_PATH", pathJoin("/work/y07/shared/apps/core/vasp/6/6.3.0/aocl-3.1-gcc10", "lib"))
+setenv("UCX_IB_REG_METHODS", "direct")
 
 prepend_path("PATH", pathJoin(pkgVersionBase, "bin"))
 setenv("VASP", pkgVersionBase)
@@ -42,3 +47,4 @@ setenv("VASP_VDW_KERNEL", pathJoin(pkgNameBase, "vdw_kernel"))
 setenv("VASP_PSPOT_DIR", pathJoin(pkgNameBase, "potpaw"))
 
 family("vasp")
+
