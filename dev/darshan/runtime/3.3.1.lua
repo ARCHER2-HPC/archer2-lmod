@@ -1,12 +1,8 @@
--- AOCL preamble /work/y07/shared/archer2-lmod/core/aocl/3.1.lua
+-- Darshan
 
-conflict("mkl")
-conflict("cray-fftw") 
-family("aocl")
-unload("cray-libsci")
+family("darshan")
 
-prereq_any("PrgEnv-gnu", "PrgEnv-aocc")
-depends_on("cray-python/3.8.5.0")
+prereq_any("PrgEnv-cray", "PrgEnv-gnu", "PrgEnv-aocc")
 
 -- This is introspection; may want to set explicitly.
 
@@ -16,9 +12,9 @@ local productLevel = myModuleVersion()
 
 -- Help section
 
-local help1 = "AOCL version " .. productLevel .. "\n"
-local help2 = "For details of AOCL on ARCHER2 see:  \n"
-local help3 = "https://docs.archer2.ac.uk/software-libraries/aocl/"
+local help1 = "Darshan version " .. productLevel .. "\n"
+local help2 = "For details of Darshan on ARCHER2 see:  \n"
+local help3 = "https://docs.archer2.ac.uk/tools/darshan/"
 
 help ( help1 .. help2 .. help3 )
 
@@ -102,7 +98,7 @@ function epccSharedRoot()
   local fullPath = myFileName()
 
   local i, j = string.find(fullPath, "/" .. "archer2-lmod", 1, true)
-  local sharedRoot = pathJoin(string.sub(fullPath, 1, i-1), "libs/core")
+  local sharedRoot = pathJoin(string.sub(fullPath, 1, i-1), "utils/core")
 
   return sharedRoot
 
@@ -114,7 +110,7 @@ end
 --   productLevel               e.g., "5.1.0" (a.ka. "version")
 
 -- To which we add:
---   sharedRoot                  e.g. "/work/y07/shared/libs/core"
+--   sharedRoot                  e.g. "/work/y07/shared/utils/core"
 --   PE_PRODUCT                  e.g., "PE_METIS" as a convenience
 
 local sharedRoot = epccSharedRoot()
@@ -132,8 +128,6 @@ setenv(PE_PRODUCT .. "_FIXED_PRGENV",   compilerEnv)
 
 prepend_path("PE_PKGCONFIG_LIBS", productName)
 prepend_path("PE_PKGCONFIG_PRODUCTS", PE_PRODUCT)
-
--- OpenMP is not required
 
 
 -- If the currently loaded compiler version is not available,
@@ -179,8 +173,7 @@ else
   prepend_path(string.upper(productName) .. "_DIR",  productPath)
   prepend_path(string.upper(productName) .. "_ROOT", productPath)
 
-  prepend_path("LD_LIBRARY_PATH", productPath .. "/lib")
-
+  setenv("SRUN_EXPORT_ENV", "ALL,LD_PRELOAD=" .. productPath .. "/lib/libdarshan.so")
 
   -- pkgconfig location
 

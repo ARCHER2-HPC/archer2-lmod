@@ -14,7 +14,7 @@ files, with minimum overhead.  The name is taken from a Sanskrit word for “sig
 
 always_load("cray-python")
 
-local pkgVersionBase = "/work/y07/shared/utils/core/darshan/3.3.1"
+local pkgVersionBase = "/work/y07/shared/utils/core/darshan/3.3.1-util"
 
 prepend_path("PATH", pathJoin(pkgVersionBase, "bin"))
 
