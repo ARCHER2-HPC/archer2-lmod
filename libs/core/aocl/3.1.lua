@@ -5,7 +5,7 @@ conflict("cray-fftw")
 family("aocl")
 unload("cray-libsci")
 
-prereq_any("PrgEnv-gnu", "PrgEnv-aocc")
+prereq_any("PrgEnv-gnu", "aocc/3.0.0")
 depends_on("cray-python/3.8.5.0")
 
 -- This is introspection; may want to set explicitly.

@@ -49,10 +49,11 @@ function epccCompilerVersion()
   local version = nil
   local pe = epccCompilerEnv()
 
+
   if (pe == "CRAYCLANG") then
     version = os.getenv("CRAY_CC_VERSION") or nil
   elseif (pe == "GNU") then
-    version = os.getenv("GNU_VERSION") or nil
+    version = os.getenv("GCC_VERSION") or nil
   elseif (pe == "AOCC") then
     version = os.getenv("CRAY_AOCC_VERSION") or nil
   end
