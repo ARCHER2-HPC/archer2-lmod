@@ -4,7 +4,7 @@ EPCC ARCHER2 Environment
 
 Environment setup for ARCHER2:
   * Adds to the the default MODULEPATH to make software modules available
-  * Sets SBATCH_EXPORT=none to avoid login shell modules being exported to batch jobs
+  * Sets SBATCH_EXPORT=none to avoid login shell modules being setenv(ed to batch jobs
 
   Installed: 29 September 2021
   Installed by: Andy Turner, EPCC
@@ -29,4 +29,19 @@ setenv("EPCC_SINGULARITY_DIR", "/work/y07/shared/singularity-images")
 
 -- Load any default modules
 always_load("bolt")
+
+-- Make dynamic paths available
+if os.getenv("PE_ENV") == "GNU" then
+  prepend_path("MODULEPATH", "/work/y07/shared/archer2-lmod/utils/compiler/gnu/8.0")
+elseif os.getenv("PE_ENV") == "CRAY" then
+  prepend_path("MODULEPATH", "/work/y07/shared/archer2-lmod/utils/compiler/crayclang/10.0")
+elseif os.getenv("PE_ENV") == "AOCC" then
+  prepend_path("MODULEPATH", "/work/y07/shared/archer2-lmod/utils/compiler/aocc/3.0")
+end
+setenv("LMOD_CUSTOM_COMPILER_GNU_PREFIX", "/work/y07/shared/archer2-lmod/utils/compiler/gnu/8.0")
+setenv("LMOD_CUSTOM_COMPILER_GNU_8_0_PREFIX", "/work/y07/shared/archer2-lmod/utils/compiler/gnu/8.0")
+setenv("LMOD_CUSTOM_COMPILER_CRAYCLANG_PREFIX", "/work/y07/shared/archer2-lmod/utils/compiler/crayclang/10.0")
+setenv("LMOD_CUSTOM_COMPILER_CRAYCLANG_10_0_PREFIX", "/work/y07/shared/archer2-lmod/utils/compiler/crayclang/10.0")
+setenv("LMOD_CUSTOM_COMPILER_AOCC_PREFIX", "/work/y07/shared/archer2-lmod/utils/compiler/aocc/3.0")
+setenv("LMOD_CUSTOM_COMPILER_AOCC_3_0_PREFIX", "/work/y07/shared/archer2-lmod/utils/compiler/aocc/3.0")
 
