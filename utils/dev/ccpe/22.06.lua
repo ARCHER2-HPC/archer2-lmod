@@ -7,7 +7,7 @@ The containerized environment can be modified to access the host libfabric and/o
 For further details, see https://github.com/mbareford/archer2-docs/blob/mbareford/ccpe/docs/user-guide/dev-environment.md .
 
    - Installed by: M. Bareford, EPCC"
-   - Date: 2 November 2022\n"
+   - Date: 5 December 2022\n"
 ]])
 
 
@@ -32,7 +32,8 @@ local ccpeAutoPassData = pathJoin(ccpeRoot, "AutoPass/data")
 
 local ccpeBindPaths = ccpeHostRoot .. ":" .. ccpeAutoPassLic .. "," ..
                       ccpeHostLicenceData .. ":" .. ccpeAutoPassData .. "," ..
-                      ccpeHostRoot .. "," .. "/var/spool/slurmd/mpi_cray_shasta"
+                      ccpeHostRoot .. "," .. "/var/run/munge" .. "," ..
+		      "/var/spool/slurmd/mpi_cray_shasta"
 
 local ccpeLibPaths =  "/opt/cray/libfabric/1.11.0.4.116/lib64" .. ":/opt/cray/pe/pmi/6.0.17/lib" .. 
                      ":/opt/cray/pe/lib64"                     .. ":/opt/cray/pe/cce/14.0.1/cce/x86_64/lib" ..

@@ -27,9 +27,9 @@ prepend_path("PATH", pathJoin(pkgVersionBase, "bin"))
 prepend_path("CPATH", pathJoin(pkgVersionBase, "include"))
 prepend_path("MANPATH", pathJoin(pkgVersionBase, "share/man"))
 
-prepend_path("LIBRARY_PATH", pmiLibPath)
-prepend_path("LD_LIBRARY_PATH", pmiLibPath)
-prepend_path("LD_RUN_PATH", pmiLibPath)
+append_path("LIBRARY_PATH", pmiLibPath)
+append_path("LD_LIBRARY_PATH", pmiLibPath)
+append_path("LD_RUN_PATH", pmiLibPath)
 
 prepend_path("LIBRARY_PATH", pathJoin(pkgVersionBase, "lib"))
 prepend_path("LD_LIBRARY_PATH", pathJoin(pkgVersionBase, "lib"))
