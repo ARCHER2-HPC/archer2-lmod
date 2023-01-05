@@ -1,10 +1,10 @@
 help([[
-Arm Forge 21.0.2
-============
+Arm Forge 22.1.1
+================
 Arm Forge is a debugging tool for scalar, multi-threaded and large-scale parallel applications.
 
-Installed by: C. Laoide-Kemp, EPCC
-Date: 11 May 2022
+Installed by: M. Bareford, EPCC
+Date: 5 December 2022
 
 ]])
 local pkgNameVer = myModuleFullName()

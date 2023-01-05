@@ -16,6 +16,9 @@ load("cpe/21.09")
 load("PrgEnv-gnu")
 
 prepend_path("LD_LIBRARY_PATH", os.getenv("CRAY_LD_LIBRARY_PATH"))
+
+pushenv("SLURM_CPU_FREQ_REQ","2250000")
+
 local pkgNameVer = myModuleFullName()
 local base = pathJoin("/work/y07/shared/apps/core", pkgNameVer)
 

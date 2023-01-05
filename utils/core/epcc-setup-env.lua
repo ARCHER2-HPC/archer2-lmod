@@ -23,7 +23,8 @@ prepend_path("PATH", "/work/y07/shared/utils/core/bin")
 
 -- Set any env vars
 --setenv("SBATCH_EXPORT", "MODULEPATH,SBATCH_EXPORT")
-setenv("SBATCH_EXPORT", "SBATCH_EXPORT")
+setenv("SLURM_CPU_FREQ_REQ","2000000")
+setenv("SBATCH_EXPORT", "SLURM_CPU_FREQ_REQ,SBATCH_EXPORT")
 setenv("SLURM_EXPORT_ENV", "all")
 setenv("EPCC_SINGULARITY_DIR", "/work/y07/shared/singularity-images")
 

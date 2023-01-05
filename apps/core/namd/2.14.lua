@@ -22,6 +22,8 @@ load("cpe/21.09")
 load("xpmem")
 load("perftools-base")
 
+pushenv("SLURM_CPU_FREQ_REQ","2250000")
+
 local pkgName = myModuleName()
 local pkgNameVer = myModuleFullName()
 local pkgNameBase = pathJoin("/work/y07/shared/apps/core", pkgName)

@@ -42,7 +42,7 @@ local pkgVersionBase = pathJoin("/work/y07/shared/apps/core", pkgNameVer)
 prepend_path("PATH", pathJoin(pkgVersionBase, "bin"))
 setenv("VASP", pkgVersionBase)
 
-setenv("VASP_VDW_KERNEL", pathJoin(pkgNameBase, "vdw_kernel"))
-setenv("VASP_PSPOT_DIR", pathJoin(pkgNameBase, "potpaw"))
+setenv("VASP_VDW_KERNEL", pathJoin(pkgNameBase, "5/vdw_kernel"))
+setenv("VASP_PSPOT_DIR", pathJoin(pkgNameBase, "5/potpaw"))
 
 family("vasp")

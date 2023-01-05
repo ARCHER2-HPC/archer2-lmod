@@ -37,7 +37,7 @@ prepend_path("LD_LIBRARY_PATH", os.getenv("CRAY_LD_LIBRARY_PATH"))
 prepend_path("PATH", pathJoin(pkgVersionBase, "bin"))
 setenv("VASP", pkgVersionBase)
 
-setenv("VASP_VDW_KERNEL", pathJoin(pkgNameBase, "vdw_kernel"))
-setenv("VASP_PSPOT_DIR", pathJoin(pkgNameBase, "potpaw"))
+setenv("VASP_VDW_KERNEL", pathJoin(pkgNameBase, "6/vdw_kernel"))
+setenv("VASP_PSPOT_DIR", pathJoin(pkgNameBase, "6/potpaw"))
 
 family("vasp")

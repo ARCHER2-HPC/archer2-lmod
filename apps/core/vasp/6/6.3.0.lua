@@ -43,8 +43,8 @@ setenv("UCX_IB_REG_METHODS", "direct")
 prepend_path("PATH", pathJoin(pkgVersionBase, "bin"))
 setenv("VASP", pkgVersionBase)
 
-setenv("VASP_VDW_KERNEL", pathJoin(pkgNameBase, "vdw_kernel"))
-setenv("VASP_PSPOT_DIR", pathJoin(pkgNameBase, "potpaw"))
+setenv("VASP_VDW_KERNEL", pathJoin(pkgNameBase, "6/vdw_kernel"))
+setenv("VASP_PSPOT_DIR", pathJoin(pkgNameBase, "6/potpaw"))
 
 family("vasp")
 
