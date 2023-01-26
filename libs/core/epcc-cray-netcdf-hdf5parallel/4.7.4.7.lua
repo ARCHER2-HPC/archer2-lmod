@@ -77,12 +77,13 @@ function epccProductAvailableVersions(productRoot)
   table.sort(vlist)
 
   return vlist
-
+  
 end
 
 
 local productName = "netcdf-hdf5parallel"
 local productLevel = os.getenv("CRAY_NETCDF_HDF5PARALLEL_VERSION")
+
 
 local sharedRoot = "/opt/cray/pe"
 
