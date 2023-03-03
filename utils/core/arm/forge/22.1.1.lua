@@ -3,6 +3,9 @@ Arm Forge 22.1.1
 ================
 Arm Forge is a debugging tool for scalar, multi-threaded and large-scale parallel applications.
 
+Run "ssh <username>@login.archer2.ac.uk -L 4241:dvn04:4241" to setup port 4241 for accessing the
+Arm Licence Server Status page at "http://localhost:4241/status.html".
+
 Installed by: M. Bareford, EPCC
 Date: 5 December 2022
 

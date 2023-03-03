@@ -1,13 +1,13 @@
 help([[
-Arm Forge 22.0.2
-============
+Arm Forge 22.1.3
+================
 Arm Forge is a debugging tool for scalar, multi-threaded and large-scale parallel applications.
 
 Run "ssh <username>@login.archer2.ac.uk -L 4241:dvn04:4241" to setup port 4241 for accessing the
 Arm Licence Server Status page at "http://localhost:4241/status.html".
 
-Installed by: C. Laoide-Kemp, EPCC
-Date: 10 June 2022
+Installed by: M. Bareford, EPCC
+Date: 1 February 2023
 
 ]])
 local pkgNameVer = myModuleFullName()
