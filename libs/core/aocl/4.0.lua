@@ -1,4 +1,4 @@
--- AOCL preamble /work/y07/shared/archer2-lmod/dev/aocl-3.1.lua
+-- AOCL preamble /work/y07/shared/archer2-lmoid/core/aocl/4.0.lua
 
 conflict("mkl")
 conflict("cray-fftw") 
@@ -6,6 +6,7 @@ family("aocl")
 unload("cray-libsci")
 
 prereq_any("PrgEnv-gnu")
+load("cpe/22.04")
 depends_on("cray-python/3.8.5.0")
 
 -- This is introspection; may want to set explicitly.
