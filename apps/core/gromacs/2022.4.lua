@@ -7,13 +7,14 @@ MPI executables using the 'gmx_mpi' command and the `gmx_mpi_d` command
 respectively. You can also use a serial version on the login node
 by using the 'gmx' command.
 
-   - Installed by: J. Sindt, EPCC"
-   - Date: 2 February 2023\n"
+   - Installed by: R. Apóstolo, EPCC"
+   - Date: 27 March 2023"
 
 ]])
 
-load("PrgEnv-gnu")
-load("cpe/21.09")
+load("cpe/22.12")
+load("cray-python/3.9.13.1")
+load("cray-fftw/3.3.10.3")
 
 pushenv("SLURM_CPU_FREQ_REQ","2250000")
 
