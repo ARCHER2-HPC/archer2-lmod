@@ -16,7 +16,7 @@ $ source ${FOAM_INSTALL_DIR}/etc/bashrc
 This source command will set all the apppropriate
 environment variables for OpenFOAM.
 
-Compiled: 7 October 2021 PrgEnv-gnu gcc v11.2 (Cray PE 21.09) 
+Compiled: 25 April 2023 PrgEnv-gnu gcc v11.2 (Cray PE 22.12) 
 Maintained by: Kevin Stratford, EPCC
 ]])
 
