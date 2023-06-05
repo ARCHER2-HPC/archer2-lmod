@@ -1,22 +1,21 @@
--- Adios v1 preamble
--- Note Adios does not integrate with the compiler wrappers
--- see https://docs.archer2.ac.uk/software-libraries/adios/
+-- SuperLU-DIST preamble
 
-family("adios")
+family("superlu_dist")
 
 prereq_any("PrgEnv-cray", "PrgEnv-gnu", "PrgEnv-aocc")
-depends_on("epcc-cray-hdf5-parallel/1.12.0.3")
+depends_on("metis/5.1.0")
+depends_on("parmetis/4.0.3")
 
 -- This is introspection; may want to set explicitly.
 
-local productName = myModuleName()
+local productName =  myModuleName()
 local productLevel = myModuleVersion()
 
 -- Help section
 
-local help1 = "Adios version " .. productLevel .. "\n"
-local help2 = "For details of Adios on ARCHER2 see:  \n"
-local help3 = "https://docs.archer2.ac.uk/software-libraries/adios/"
+local help1 = "SuperLU_DIST version " .. productLevel .. "\n"
+local help2 = "For details of SuperLU_DIST on ARCHER2 see:  \n"
+local help3 = "https://docs.archer2.ac.uk/software-libraries/superlu/"
 
 help ( help1 .. help2 .. help3 )
 
@@ -113,7 +112,9 @@ end
 
 -- To which we add:
 --   sharedRoot                  e.g. "/work/y07/shared/libs/core"
---   PE_PRODUCT                  e.g., "PE_METIS" as a convenience
+--   PE_PRODUCT                  e.g., "PE_SUPERLU_DIST" as a convenience
+
+productName = string.gsub(productName, "-", "_")
 
 local sharedRoot = epccSharedRoot()
 local PE_PRODUCT = "PE_" .. string.upper(productName)
@@ -124,18 +125,27 @@ local PE_PRODUCT = "PE_" .. string.upper(productName)
 local compilerEnv = epccCompilerEnv()
 local compilerVersion = epccCompilerVersion()
 
--- setenv(PE_PRODUCT .. "_MODULE_NAME",    productName)
--- setenv(PE_PRODUCT .. "_PKGCONFIG_LIBS", productName)
--- setenv(PE_PRODUCT .. "_FIXED_PRGENV",   compilerEnv)
+setenv(PE_PRODUCT .. "_MODULE_NAME",    productName)
+setenv(PE_PRODUCT .. "_PKGCONFIG_LIBS", productName)
+setenv(PE_PRODUCT .. "_FIXED_PRGENV",   compilerEnv)
 
--- prepend_path("PE_PKGCONFIG_LIBS", productName)
--- prepend_path("PE_PKGCONFIG_PRODUCTS", PE_PRODUCT)
+prepend_path("PE_PKGCONFIG_LIBS", productName)
+prepend_path("PE_PKGCONFIG_PRODUCTS", PE_PRODUCT)
+
+
+-- OpenMP is available
+
+setenv(PE_PRODUCT .. "_OMP_REQUIRES", "")
+setenv(PE_PRODUCT .. "_OMP_REQUIRES_openmp", "_mp")
+setenv(PE_PRODUCT .. "_PKGCONFIG_VARIABLES", PE_PRODUCT .. "_OMP_REQUIRES_@openmp@")
+
+
 
 
 -- If the currently loaded compiler version is not available,
 -- look for the most recent previous version...
 
-local productRoot = pathJoin(sharedRoot, productName, productLevel)
+local productRoot = pathJoin(sharedRoot, string.gsub(productName, "_", "-"), productLevel)
 local productRootEnv = pathJoin(productRoot, compilerEnv)
 
 local vlist = {}
@@ -177,12 +187,8 @@ else
 
   -- pkgconfig location
 
-  -- local pkgconfig = pathJoin(productPath, "lib/pkgconfig")
-  -- prepend_path("PE_" .. compilerEnv .. "_FIXED_PKGCONFIG_PATH", pkgconfig)
-
-  -- bin is required
-
-  prepend_path("PATH", pathJoin(productPath, "bin"))
+  local pkgconfig = pathJoin(productPath, "lib/pkgconfig")
+  prepend_path("PE_" .. compilerEnv .. "_FIXED_PKGCONFIG_PATH", pkgconfig)
 
 end
 

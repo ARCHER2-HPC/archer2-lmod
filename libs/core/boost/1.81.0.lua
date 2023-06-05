@@ -1,17 +1,7 @@
--- Trilinos preamble
+-- Boost preamble
 
-family("trilinos")
-
+family("boost")
 prereq_any("PrgEnv-cray", "PrgEnv-gnu", "PrgEnv-aocc")
-
-depends_on("glm/0.9.9.6")
-depends_on("boost/1.72.0")
-depends_on("matio/1.5.18")
-depends_on("mumps/5.3.5")
-depends_on("superlu/5.2.2")
-depends_on("superlu-dist/6.4.0")
-depends_on("epcc-cray-hdf5-parallel/1.12.0.3")
-depends_on("epcc-cray-netcdf-hdf5parallel")
 
 -- This is introspection; may want to set explicitly.
 
@@ -20,9 +10,9 @@ local productLevel = myModuleVersion()
 
 -- Help section
 
-local help1 = "Trilinos version " .. productLevel .. "\n"
-local help2 = "For details of Trilinos on ARCHER2 see:  \n"
-local help3 = "https://docs.archer2.ac.uk/software-libraries/trilinos/"
+local help1 = "Boost version " .. productLevel .. "\n"
+local help2 = "For details of Boost on ARCHER2 see:  \n"
+local help3 = "https://docs.archer2.ac.uk/software-libraries/boost/"
 
 help ( help1 .. help2 .. help3 )
 
@@ -130,17 +120,12 @@ local PE_PRODUCT = "PE_" .. string.upper(productName)
 local compilerEnv = epccCompilerEnv()
 local compilerVersion = epccCompilerVersion()
 
-setenv(PE_PRODUCT .. "_MODULE_NAME",    productName)
+setenv(PE_PRODUCT .. "_MODULE_NAME",        productName)
 setenv(PE_PRODUCT .. "_CXX_PKGCONFIG_LIBS", productName)
-setenv(PE_PRODUCT .. "_FIXED_PRGENV",   compilerEnv)
+setenv(PE_PRODUCT .. "_FIXED_PRGENV",       compilerEnv)
 
 prepend_path("PE_CXX_PKGCONFIG_LIBS", productName)
 prepend_path("PE_PKGCONFIG_PRODUCTS", PE_PRODUCT)
-
--- Fortran
-
-setenv(PE_PRODUCT .. "_FORTRAN_PKGCONFIG_LIBS", productName)
-prepend_path("PE_FORTRAN_PKGCONFIG_LIBS", productName)
 
 
 -- If the currently loaded compiler version is not available,
@@ -174,7 +159,7 @@ end
 -- Set compiler-dependent information
 
 if (genCompiler == nil) then
-  LmodError("Package not supported in the loaded compiler version")
+  error("Package not supported in the loaded compiler version")
 else
   -- OK, can now set up
 

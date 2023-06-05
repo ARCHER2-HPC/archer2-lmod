@@ -1,8 +1,15 @@
--- GLM preamble
+-- PETSc preamble
 
-family("glm")
+family("petsc")
 
 prereq_any("PrgEnv-cray", "PrgEnv-gnu", "PrgEnv-aocc")
+
+depends_on("cray-hdf5-parallel")
+depends_on("hypre/2.25.0")
+depends_on("mumps/5.5.1")
+depends_on("superlu/5.2.2")
+depends_on("superlu-dist/8.1.2")
+
 
 -- This is introspection; may want to set explicitly.
 
@@ -11,9 +18,9 @@ local productLevel = myModuleVersion()
 
 -- Help section
 
-local help1 = "GLM version " .. productLevel .. "\n"
-local help2 = "For details of GLM on ARCHER2 see:  \n"
-local help3 = "https://docs.archer2.ac.uk/software-libraries/glm/"
+local help1 = "PETSc version " .. productLevel .. "\n"
+local help2 = "For details of PETSc on ARCHER2 see:  \n"
+local help3 = "https://docs.archer2.ac.uk/software-libraries/petsc/"
 
 help ( help1 .. help2 .. help3 )
 
@@ -121,12 +128,15 @@ local PE_PRODUCT = "PE_" .. string.upper(productName)
 local compilerEnv = epccCompilerEnv()
 local compilerVersion = epccCompilerVersion()
 
-setenv(PE_PRODUCT .. "_MODULE_NAME",        productName)
-setenv(PE_PRODUCT .. "_CXX_PKGCONFIG_LIBS", productName)
-setenv(PE_PRODUCT .. "_FIXED_PRGENV",       compilerEnv)
+setenv(PE_PRODUCT .. "_MODULE_NAME",    productName)
+setenv(PE_PRODUCT .. "_PKGCONFIG_LIBS", productName)
+setenv(PE_PRODUCT .. "_FIXED_PRGENV",   compilerEnv)
 
-prepend_path("PE_CXX_PKGCONFIG_LIBS", productName)
+prepend_path("PE_PKGCONFIG_LIBS", productName)
 prepend_path("PE_PKGCONFIG_PRODUCTS", PE_PRODUCT)
+
+
+-- OpenMP is not required
 
 
 -- If the currently loaded compiler version is not available,

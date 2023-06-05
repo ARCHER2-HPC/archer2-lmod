@@ -18,6 +18,6 @@ local pkgVersionBase = "/work/y07/shared/utils/core/darshan/3.3.1-util"
 
 prepend_path("PATH", pathJoin(pkgVersionBase, "bin"))
 
-prepend_path("PYTHONPATH", pathJoin(pkgVersionBase, "lib/python3.8/site-packages"))
+prepend_path("PYTHONPATH", pathJoin(pkgVersionBase, "lib/python3.9/site-packages"))
 
 family("darshan")

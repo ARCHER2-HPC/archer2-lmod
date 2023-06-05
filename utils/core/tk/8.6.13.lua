@@ -1,5 +1,5 @@
 help([[
-Provides TK 8.6.10
+Provides TK 8.6.13
 ]])
 
 local pkgNameVer = myModuleFullName()

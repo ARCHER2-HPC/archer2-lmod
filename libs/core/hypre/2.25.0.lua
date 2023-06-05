@@ -1,15 +1,8 @@
--- PETSc preamble
+-- HYPRE preamble
 
-family("petsc")
+family("hypre")
 
 prereq_any("PrgEnv-cray", "PrgEnv-gnu", "PrgEnv-aocc")
-
-depends_on("cray-hdf5-parallel")
-depends_on("hypre/2.18.0")
-depends_on("mumps/5.3.5")
-depends_on("superlu/5.2.2")
-depends_on("superlu-dist/6.4.0")
-
 
 -- This is introspection; may want to set explicitly.
 
@@ -18,9 +11,9 @@ local productLevel = myModuleVersion()
 
 -- Help section
 
-local help1 = "PETSc version " .. productLevel .. "\n"
-local help2 = "For details of PETSc on ARCHER2 see:  \n"
-local help3 = "https://docs.archer2.ac.uk/software-libraries/petsc/"
+local help1 = "HYPRE version " .. productLevel .. "\n"
+local help2 = "For details of HYPRE on ARCHER2 see:  \n"
+local help3 = "https://docs.archer2.ac.uk/software-libraries/hypre/"
 
 help ( help1 .. help2 .. help3 )
 
@@ -136,7 +129,13 @@ prepend_path("PE_PKGCONFIG_LIBS", productName)
 prepend_path("PE_PKGCONFIG_PRODUCTS", PE_PRODUCT)
 
 
--- OpenMP is not required
+-- OpenMP is available
+
+setenv(PE_PRODUCT .. "_OMP_REQUIRES", "")
+setenv(PE_PRODUCT .. "_OMP_REQUIRES_openmp", "_mp")
+setenv(PE_PRODUCT .. "_PKGCONFIG_VARIABLES", PE_PRODUCT .. "_OMP_REQUIRES_@openmp@")
+
+
 
 
 -- If the currently loaded compiler version is not available,
@@ -186,6 +185,10 @@ else
 
   local pkgconfig = pathJoin(productPath, "lib/pkgconfig")
   prepend_path("PE_" .. compilerEnv .. "_FIXED_PKGCONFIG_PATH", pkgconfig)
+
+  -- bin is required
+
+  prepend_path("PATH", pathJoin(productPath, "bin"))
 
 end
 

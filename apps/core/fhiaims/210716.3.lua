@@ -23,10 +23,6 @@ local pkgNameVer = myModuleFullName()
 local pkgNameBase = pathJoin("/work/y07/shared/apps/core", pkgName)
 local pkgVersionBase = pathJoin("/work/y07/shared/apps/core", pkgNameVer)
 
-load("PrgEnv-gnu")
-load("cpe/21.09")
-prepend_path("LD_LIBRARY_PATH", os.getenv("CRAY_LD_LIBRARY_PATH"))
-
 prepend_path("PATH", pathJoin(pkgVersionBase, "bin"))
 
 family("fhiaims")

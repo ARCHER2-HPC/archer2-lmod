@@ -26,8 +26,8 @@ local pkgVersionBase = pathJoin("/work/y07/shared/apps/core", pkgNameVer)
 
 prepend_path("LD_LIBRARY_PATH", os.getenv("CRAY_LD_LIBRARY_PATH"))
 prepend_path("PATH", pathJoin(pkgVersionBase, "gromacs-2022.4/bin"))
-prepend_path("PATH", pathJoin(pkgVersionBase, "plumed-2.8.2/bin"))
-prepend_path("LD_LIBRARY_PATH", pathJoin(pkgVersionBase, "plumed-2.8.2/lib"))
+prepend_path("PATH", pathJoin(pkgVersionBase, "plumed-2.8.2_omp/bin"))
+prepend_path("LD_LIBRARY_PATH", pathJoin(pkgVersionBase, "plumed2-2.8.2_omp/lib"))
 
 family("gromacs")
 

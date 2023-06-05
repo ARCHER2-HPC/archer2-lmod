@@ -1,15 +1,9 @@
--- PETSc preamble
+-- SLEPc preamble
 
-family("petsc")
+family("slepc")
 
 prereq_any("PrgEnv-cray", "PrgEnv-gnu", "PrgEnv-aocc")
-
-depends_on("cray-hdf5-parallel")
-depends_on("hypre/2.18.0")
-depends_on("mumps/5.3.5")
-depends_on("superlu/5.2.2")
-depends_on("superlu-dist/6.4.0")
-
+depends_on("petsc/3.18.5")
 
 -- This is introspection; may want to set explicitly.
 
@@ -18,9 +12,9 @@ local productLevel = myModuleVersion()
 
 -- Help section
 
-local help1 = "PETSc version " .. productLevel .. "\n"
-local help2 = "For details of PETSc on ARCHER2 see:  \n"
-local help3 = "https://docs.archer2.ac.uk/software-libraries/petsc/"
+local help1 = "SLEPc version " .. productLevel .. "\n"
+local help2 = "For details of SLEPc on ARCHER2 see:  \n"
+local help3 = "https://docs.archer2.ac.uk/software-libraries/slepc/"
 
 help ( help1 .. help2 .. help3 )
 

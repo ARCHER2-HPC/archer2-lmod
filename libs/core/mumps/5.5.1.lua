@@ -1,19 +1,22 @@
--- ARPACK-NG preamble
+-- MUMPS preamble
 
-family("arpack_ng")
+family("mumps")
 
 prereq_any("PrgEnv-cray", "PrgEnv-gnu", "PrgEnv-aocc")
+depends_on("metis/5.1.0")
+depends_on("parmetis/4.0.3")
+depends_on("scotch/7.0.3")
 
 -- This is introspection; may want to set explicitly.
 
-local productName =  myModuleName()
+local productName = myModuleName()
 local productLevel = myModuleVersion()
 
 -- Help section
 
-local help1 = "ARPACK-NG version " .. productLevel .. "\n"
-local help2 = "For details of ARPACK on ARCHER2 see:  \n"
-local help3 = "https://docs.archer2.ac.uk/software-libraries/arpack/"
+local help1 = "MUMPS version " .. productLevel .. "\n"
+local help2 = "For details of MUMPS on ARCHER2 see:  \n"
+local help3 = "https://docs.archer2.ac.uk/software-libraries/mumps/"
 
 help ( help1 .. help2 .. help3 )
 
@@ -89,7 +92,7 @@ function epccProductAvailableVersions(productRoot)
 end
 
 -- Find sharedRoot; typically /work/y07/shared
--- which must correspond to   /work/y07/shared/archer2-lmod/libs/core
+-- which must correspond to   /work/y07/shared/archer2-lmod/core
 -- the last two parts of which are returned by hierarchy()
 
 function epccSharedRoot()
@@ -110,9 +113,7 @@ end
 
 -- To which we add:
 --   sharedRoot                  e.g. "/work/y07/shared/libs/core"
---   PE_PRODUCT                  e.g., "PE_SUPERLU_DIST" as a convenience
-
-productName = string.gsub(productName, "-", "_")
+--   PE_PRODUCT                  e.g., "PE_METIS" as a convenience
 
 local sharedRoot = epccSharedRoot()
 local PE_PRODUCT = "PE_" .. string.upper(productName)
@@ -131,10 +132,19 @@ prepend_path("PE_PKGCONFIG_LIBS", productName)
 prepend_path("PE_PKGCONFIG_PRODUCTS", PE_PRODUCT)
 
 
+-- OpenMP is available
+
+setenv(PE_PRODUCT .. "_OMP_REQUIRES", "")
+setenv(PE_PRODUCT .. "_OMP_REQUIRES_openmp", "_mp")
+setenv(PE_PRODUCT .. "_PKGCONFIG_VARIABLES", PE_PRODUCT .. "_OMP_REQUIRES_@openmp@")
+
+
+
+
 -- If the currently loaded compiler version is not available,
 -- look for the most recent previous version...
 
-local productRoot = pathJoin(sharedRoot, string.gsub(productName, "_", "-"), productLevel)
+local productRoot = pathJoin(sharedRoot, productName, productLevel)
 local productRootEnv = pathJoin(productRoot, compilerEnv)
 
 local vlist = {}

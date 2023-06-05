@@ -24,8 +24,11 @@ calculations).
 
 ]])
 
+load("PrgEnv-gnu")
+load("tcl/8.6.13")
+load("tk/8.6.13")
 
-local pkgVersionBase = pathJoin("/work/y07/shared/apps/core/pychemshell/21.0.1")
+local pkgVersionBase = pathJoin("/work/y07/shared/apps/core/py-chemshell/21.0.3")
 
 prepend_path("PATH", pathJoin(pkgVersionBase, "chemsh-py/bin/cpe-gnu"))
  

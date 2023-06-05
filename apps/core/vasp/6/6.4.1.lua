@@ -1,10 +1,10 @@
 help([[
-VASP 6.3.2
+VASP 6.4.1
 ==========
 
-This module sets up your environment to access VASP 6.3.2.
+This module sets up your environment to access VASP 6.4.1.
 
-Once this module has been loaded you can access the VASP 6.3.2
+Once this module has been loaded you can access the VASP 6.4.1
 executables as:
 
  *'vasp_std'       - Multiple k-point (complex) version
@@ -23,7 +23,7 @@ SAFE. see:
 Modules loaded at compile time:
 
 
-   Compiled: 16 March 2023
+   Compiled: 30 May 2023
    Maintained by: A. R. Turner, EPCC
 ]])
 

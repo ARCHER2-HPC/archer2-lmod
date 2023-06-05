@@ -8,7 +8,7 @@ environment variables needed to use NWChem
 will be available as 'nwchem'
 
   Installed by: A. Turner, EPCC
-  Date: 4 October 2021
+  Date: 28 March 2023
 ]])
 
 local pkgNameVer = myModuleFullName()
