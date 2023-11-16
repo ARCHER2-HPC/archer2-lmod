@@ -6,8 +6,8 @@ This module sets up your environment to access Quantum Esspresso
 6.8. Once loaded you can access MPI-enabled Quantum Esspresso
 executables using the usual commands.
 
-   Installed by: A. Turner, EPCC
-   Installation date: 12 October 2021
+   Installed by: E. Broadway, EPCC
+   Installation date: 7th June 2023
 ]])
 
 local pkgName = myModuleName()

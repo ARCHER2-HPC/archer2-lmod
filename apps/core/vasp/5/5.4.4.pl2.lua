@@ -21,16 +21,15 @@ SAFE. see:
 
   * https://epcced.github.io/safe-docs/safe-for-users/#how-to-request-access-to-a-package-group
 
-   Compiled: 1 October 2021"
+   Compiled: 5 June 2023"
    Maintained by: A. R. Turner, EPCC"
 ]])
 
 load("PrgEnv-gnu")
-load("cpe/21.09")
-load("craype-network-ucx")
-load("cray-mpich-ucx")
+load("gcc/10.3.0")
+load("cray-fftw")
 prepend_path("LD_LIBRARY_PATH", os.getenv("CRAY_LD_LIBRARY_PATH"))
-setenv("UCX_IB_REG_METHODS", "direct")
+-- setenv("UCX_IB_REG_METHODS", "direct")
 
 local pkgName = myModuleName()
 local pkgNameVer = myModuleFullName()

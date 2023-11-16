@@ -29,4 +29,4 @@ prepend_path("LD_LIBRARY_PATH", pathJoin(base, "llvm/lib"))
 prepend_path("LD_LIBRARY_PATH", pathJoin(base, "mesa/21.0.1/lib64"))
 prepend_path("LD_LIBRARY_PATH", pathJoin(base, "paraview/lib64"))
 
-prepend_path("PYTHONPATH", pathJoin(base, "paraview/lib64/python3.8/site-packages"))
+prepend_path("PYTHONPATH", pathJoin(base, "paraview/lib64/python3.9/site-packages"))

@@ -22,8 +22,25 @@ SAFE. see:
 
 Modules loaded at compile time:
 
+craype-x86-rome
+libfabric/1.12.1.2.2.0.0
+craype-network-ofi
+perftools-base/22.12.0
+xpmem/2.5.2-2.4_3.30__gd0f7936.shasta
+bolt/0.8
+epcc-setup-env
+load-epcc-module
+gcc/10.3.0
+craype/2.7.19
+cray-dsmml/0.2.2
+cray-mpich/8.1.23
+cray-libsci/22.12.1.1
+PrgEnv-gnu/8.3.3
+cray-fftw/3.3.10.3
+cray-hdf5-parallel/1.12.2.1
 
-   Compiled: 30 May 2023
+
+   Updated: 20 July 2023 (made OFI default MPI protocol)
    Maintained by: A. R. Turner, EPCC
 ]])
 
@@ -38,9 +55,6 @@ load("cray-fftw/3.3.10.3")
 load("cray-hdf5-parallel/1.12.2.1")
 prepend_path("LD_LIBRARY_PATH", os.getenv("CRAY_LD_LIBRARY_PATH"))
 load("gcc/10.3.0")
-load("craype-network-ucx")
-load("cray-mpich-ucx/8.1.23")
-setenv("UCX_IB_REG_METHODS", "direct")
 
 prepend_path("PATH", pathJoin(pkgVersionBase, "bin"))
 setenv("VASP", pkgVersionBase)

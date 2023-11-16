@@ -8,6 +8,8 @@ Once the module is loaded the executable will be available as 'lmp'.
 
   Installed by: R. Apóstolo, EPCC
   Date: 27 March 2023
+
+Use `man lmp` for more help with LAMMPS.
 ]])
 
 load("cpe/22.12")
@@ -21,5 +23,6 @@ local pkgNameVer = myModuleFullName()
 local base = pathJoin("/work/y07/shared/apps/core", pkgNameVer)
 
 prepend_path("PATH", pathJoin(base, "bin"))
+prepend_path("MANPATH", pathJoin(base, "share/man"))
 
 family("lammps")

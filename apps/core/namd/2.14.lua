@@ -19,7 +19,7 @@ Build instructions: https://github.com/hpc-uk/build-instructions/blob/main/apps/
 always_load("PrgEnv-gnu")
 load("cray-fftw")
 
-pushenv("SLURM_CPU_FREQ_REQ","2000000")
+pushenv("SLURM_CPU_FREQ_REQ","2250000")
 
 local pkgName = myModuleName()
 local pkgNameVer = myModuleFullName()

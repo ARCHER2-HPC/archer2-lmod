@@ -4,7 +4,6 @@ Containerized CPE 22.06
 This module allows you to build/run a third-party code using a containerized HPE Cray Programming Environment.
 
 The containerized environment can be modified to access the host libfabric and/or host PMI libraries.
-For further details, see https://github.com/mbareford/archer2-docs/blob/mbareford/ccpe/docs/user-guide/dev-environment.md .
 
    - Installed by: M. Bareford, EPCC"
    - Date: 5 December 2022\n"
@@ -14,7 +13,6 @@ For further details, see https://github.com/mbareford/archer2-docs/blob/mbarefor
 local pkgName = myModuleName()
 local pkgNameVer = myModuleFullName()
 local pkgNameBase = pathJoin("/work/y07/shared/utils/dev", pkgName)
---local pkgVersionBase = pathJoin("/work/y07/shared/utils/dev", pkgNameVer)
 local pkgVersionBase = pathJoin("/work/z19/z19/shared", pkgNameVer)
 
 local ccpeRelease = myModuleVersion()

@@ -27,5 +27,6 @@ setenv("CP2K_DIR", pkgVersionBase)
 setenv("CP2K_DATA", pathJoin(pkgVersionBase, "data"))
 
 prepend_path("PATH", pathJoin(pkgVersionBase, "exe/ARCHER2"))
+prepend_path("PATH", pathJoin(pkgVersionBase, "libs/plumed/2.8.2/bin"))
 
 family("cp2k")
