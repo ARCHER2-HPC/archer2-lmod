@@ -57,7 +57,7 @@ function epccCompilerVersion()
   end
 
   local _, _, major, minor, patch = string.find(version, "(%d+)%.(%d+)%.(%d+)")
-
+ 
   return major .. "." .. minor
 
 end
@@ -143,32 +143,32 @@ setenv(PE_PRODUCT .. "_PKGCONFIG_VARIABLES", PE_PRODUCT .. "_OMP_REQUIRES_@openm
 local productRoot = pathJoin(sharedRoot, productName, productLevel)
 local productRootEnv = pathJoin(productRoot, compilerEnv)
 
-local vlist = {}
-local genCompiler = nil
+ local vlist = {}
+ local genCompiler = nil
 
-vlist = epccProductAvailableVersions(productRootEnv)
+ vlist = epccProductAvailableVersions(productRootEnv)
 
-if (#vlist == 0) then
+ if (#vlist == 0) then
 
   -- Fail
-  error("No installations available for " .. compilerEnv)
+   error("No installations available for " .. compilerEnv)
 
-else
+  else
 
   -- What's the most recent version in the list <= loaded compiler
 
-  for _, candidate in pairs(vlist) do
+   for _, candidate in pairs(vlist) do
     if (candidate <= tonumber(compilerVersion)) then
       genCompiler = tostring(candidate)
-    end
+    end 
   end
 
-end
+ end
 
 -- Set compiler-dependent information
 
-if (genCompiler == nil) then
-  error("Package not supported in the loaded compiler version")
+ if (genCompiler == nil) then
+   error("Package not supported in the loaded compiler version")
 else
   -- OK, can now set up
 

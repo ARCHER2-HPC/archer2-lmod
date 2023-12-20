@@ -46,3 +46,6 @@ setenv("LMOD_CUSTOM_COMPILER_CRAYCLANG_10_0_PREFIX", "/work/y07/shared/archer2-l
 setenv("LMOD_CUSTOM_COMPILER_AOCC_PREFIX", "/work/y07/shared/archer2-lmod/utils/compiler/aocc/3.0")
 setenv("LMOD_CUSTOM_COMPILER_AOCC_3_0_PREFIX", "/work/y07/shared/archer2-lmod/utils/compiler/aocc/3.0")
 
+-- Aliases
+local bashStr = "lfs quota -hp $(lsattr -p . | head -1 | awk '{print $1}') ."
+set_shell_function('showquota', bashStr, bashStr)
