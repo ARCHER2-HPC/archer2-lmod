@@ -5,7 +5,7 @@ A Python environment (based on cray-python/3.9.13.1) that provides PyTorch 2.0.0
 The environment also includes Horovod 0.28.1, which may be required for running PyTorch across multiple compute nodes.
 Simply run "pip list" to see the full package list.
 
-Build instructions: https://github.com/hpc-uk/build-instructions/blob/main/pyenvs/pytorch/build_pytorch_2.0.0_archer2.md
+Build instructions: https://github.com/hpc-uk/build-instructions/blob/main/pyenvs/pytorch/build_pytorch_2.0.0_archer2_cpu.md
 
   Installed by: Michael Bareford, EPCC
   Date: 09 June 2023

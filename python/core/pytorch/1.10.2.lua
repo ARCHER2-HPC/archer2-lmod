@@ -11,7 +11,7 @@ for running PyTorch across multiple compute nodes.
 
 Simply run "pip list" to see the full package list.
 
-Build instructions: https://github.com/hpc-uk/build-instructions/blob/main/pyenvs/pytorch/build_pytorch_1.10.2_archer2.md
+Build instructions: https://github.com/hpc-uk/build-instructions/blob/main/pyenvs/pytorch/build_pytorch_1.10.2_archer2_cpu.md
 
   Installed by: Michael Bareford, EPCC
   Date: 21 August 2023

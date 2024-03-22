@@ -1,14 +1,14 @@
 help([[
-pytorch 2.0.1
+pytorch 2.2.0
 =============
-A Python environment (based on cray-python/3.9.13.1) that provides PyTorch 2.0.1 (https://pytorch.org).
+A Python environment (based on cray-python/3.9.13.1) that provides PyTorch 2.2.0 (https://pytorch.org).
 The environment also includes Horovod 0.28.1, which may be required for running PyTorch across multiple compute nodes.
 Simply run "pip list" to see the full package list.
 
-Build instructions: https://github.com/hpc-uk/build-instructions/blob/main/pyenvs/pytorch/build_pytorch_2.0.1_archer2_cpu.md
+Build instructions: https://github.com/hpc-uk/build-instructions/blob/main/pyenvs/pytorch/build_pytorch_2.2.0_archer2_cpu.md
 
   Installed by: Michael Bareford, EPCC
-  Date: 25 August 2023
+  Date: 26 February 2024
 ]])
 
 load("cray-python")

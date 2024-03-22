@@ -49,3 +49,9 @@ setenv("LMOD_CUSTOM_COMPILER_AOCC_3_0_PREFIX", "/work/y07/shared/archer2-lmod/ut
 -- Aliases
 local bashStr = "lfs quota -hp $(lsattr -p . | head -1 | awk '{print $1}') ."
 set_shell_function('showquota', bashStr, bashStr)
+
+-- Darshan setup
+--    2024-01-30: Added for all jobs
+--    2024-01-31: Removed for all jobs
+-- always_load("darshan")
+
