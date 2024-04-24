@@ -14,7 +14,8 @@ local productLevel = myModuleVersion()
 local help1 = "GMP version " .. productLevel .. "\n"
 local help2 = "For details of GMP see:  \n"
 local help3 = "https://www.gnu.org/software/gmp/\n\n"
-help ( help1 .. help2 .. help3 )
+local help4 = "Build instructions: https://github.com/hpc-uk/build-instructions/blob/main/libs/gmp/build_gmp_6.3.0_archer2.md "
+help ( help1 .. help2 .. help3 .. help4 )
 
 
 -- EPCC FUNCTIONS
@@ -105,7 +106,7 @@ end
 -- Begin (more-or-less) generic section
 -- At this point we must have:
 --   productName                e.g., "gmp"
---   productLevel               e.g., "6.2.1" (a.ka. "version")
+--   productLevel               e.g., "6.3.0" (a.ka. "version")
 
 -- To which we add:
 --   sharedRoot                  e.g. "/work/y07/shared/libs/core"

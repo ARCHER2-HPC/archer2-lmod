@@ -53,5 +53,7 @@ set_shell_function('showquota', bashStr, bashStr)
 -- Darshan setup
 --    2024-01-30: Added for all jobs
 --    2024-01-31: Removed for all jobs
+--    2024-03-27: Added for all jobs
+--    2024-03-28: Removed for all jobs
 -- always_load("darshan")
 

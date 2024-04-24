@@ -3,23 +3,23 @@ Containerized CPE 23.12
 =======================
 This module allows you to build/run a third-party code using a containerized HPE Cray Programming Environment.
 
-Instructions for using the containerized CPE module can be found at "/work/z19/z19/shared/ccpe/23.12/ccpe-docs".
+Instructions for using the containerized CPE module can be found at "/work/y07/shared/utils/dev/ccpe/23.12/ccpe-docs".
 The files therein adhere to MkDocs Markdown form, so you'll need to do something like the following to view the
 instructions on your local machine (you'll also need Docker).
 
-scp -r <username>@login.archer2.ac.uk:/work/z19/z19/shared/ccpe/23.12/ccpe-docs ./
+scp -r <username>@login.archer2.ac.uk:/work/y07/shared/utils/dev/ccpe/23.12/ccpe-docs ./
 cd ccpe-docs
 docker run --rm -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
 
 Then, in your browser, go to "http://0.0.0.0:8000/".
 
    - Installed by: M. Bareford, EPCC"
-   - Date: 10 Jan 2024\n"
+   - Date: 17 Apr 2024\n"
 ]])
 
 
 local pkgNameVer = myModuleFullName()
-local pkgFullNameBase = pathJoin("/work/z19/z19/shared", pkgNameVer)
+local pkgFullNameBase = pathJoin("/work/y07/shared/utils/dev", pkgNameVer)
 
 local ccpeRelease = myModuleVersion()
 local ccpeImageName = "cpe_" .. ccpeRelease .. ".sif"
