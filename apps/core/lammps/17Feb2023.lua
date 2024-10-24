@@ -12,7 +12,7 @@ Once the module is loaded the executable will be available as 'lmp'.
 Use `man lmp` for more help with LAMMPS.
 ]])
 
-load("cpe/22.12")
+--load("cpe/22.12")
 load("cray-fftw/3.3.10.3")
 
 prepend_path("LD_LIBRARY_PATH", os.getenv("CRAY_LD_LIBRARY_PATH"))

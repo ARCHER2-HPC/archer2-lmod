@@ -17,9 +17,8 @@ local pkgBase = "/mnt/lustre/a2fs-nvme/work/y07/shared/spack/0.21.2/spack-epcc"
 setenv("SPACK_ROOT_EPCC", pkgBase)
 setenv("SPACK_ROOT",pathJoin(pkgBase,"spack-0.21.2"))
 
--- This is the ARCHER2 CSE module for use by EPCC staff. This means that software
--- will be installed into a .spack directory located in the /work/y07/shared
--- central software directories.
+-- This is the ARCHER2 CSE module for use by EPCC staff. This means that
+-- Spack will cache into a directory within the Spack installation itself.
 setenv("SPACK_USER_CACHE_PATH", pathJoin(pkgBase, ".spack"))
 
 -- NB this command sources the Spack setup script required for shell completion

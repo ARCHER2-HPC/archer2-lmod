@@ -18,9 +18,9 @@ Build instructions: https://github.com/hpc-uk/build-instructions/blob/main/pyenv
 ]])
 
 load("PrgEnv-gnu")
-load("cray-python")
-load("cray-fftw")
-load("mkl")
+load("cray-python/3.9.13.1")
+load("cray-fftw/3.3.10.3")
+load("mkl/2023.0.0")
 
 local pythonVersion = "3.9.13.1"
 local pythonLabel = "python3.9"

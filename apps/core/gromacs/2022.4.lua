@@ -12,7 +12,7 @@ by using the 'gmx' command.
 
 ]])
 
-load("cpe/22.12")
+-- load("cpe/22.12")
 load("cray-python/3.9.13.1")
 load("cray-fftw/3.3.10.3")
 

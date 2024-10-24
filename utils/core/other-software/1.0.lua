@@ -28,4 +28,4 @@ prepend_path("MODULEPATH", "/work/y07/shared/archer2-lmod/others/core")
 prepend_path("MODULEPATH", "/work/y23/shared/scalasca/modulefiles")
 prepend_path("MODULEPATH", "/work/y23/shared/cpl-openfoam-lammps/modulefiles")
 prepend_path("MODULEPATH", "/work/y23/shared/gcfoam/modulefiles")
- 
+prepend_path("MODULEPATH", "/work/y07/shared/archer2-lmod/libs/other")

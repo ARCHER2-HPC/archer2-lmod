@@ -16,8 +16,9 @@ local pkgBase = "/mnt/lustre/a2fs-nvme/work/y07/shared/spack/0.21.2/spack"
 setenv("SPACK_ROOT_EPCC", pkgBase)
 setenv("SPACK_ROOT",pathJoin(pkgBase,"spack-0.21.2"))
 
--- This is the user level package which will install packages to a directory
--- called .spack located in the user's /work directory.
+-- This is the user level package which will cache to a directory called .spack
+-- located in the user's /work directory. This location is also used as the
+-- default software install root.
 local user = subprocess("id -un")
 local group = subprocess("id -gn")
 setenv("SPACK_USER_CACHE_PATH", pathJoin("/work", group, group, user, ".spack"))

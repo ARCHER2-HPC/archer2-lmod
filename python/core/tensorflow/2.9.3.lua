@@ -18,7 +18,7 @@ Build instructions: https://github.com/hpc-uk/build-instructions/blob/main/pyenv
 ]])
 
 load("PrgEnv-gnu")
-load("cray-python")
+load("cray-python/3.9.13.1")
 load("craype-dl-plugin-py3/22.12.1")
 
 local pythonVersion = "3.9.13.1"

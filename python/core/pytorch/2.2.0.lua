@@ -11,7 +11,7 @@ Build instructions: https://github.com/hpc-uk/build-instructions/blob/main/pyenv
   Date: 26 February 2024
 ]])
 
-load("cray-python")
+load("cray-python/3.9.13.1")
 
 local pythonVersion = "3.9.13.1"
 local pythonLabel = "python3.9"

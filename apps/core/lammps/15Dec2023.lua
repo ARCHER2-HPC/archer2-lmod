@@ -14,7 +14,7 @@ Use `man lmp` after loading this module for more help with LAMMPS.
 
 family("lammps")
 
-always_load("cpe/22.12")
+--always_load("cpe/22.12")
 depends_on("cray-fftw/3.3.10.3")
 
 local pkgNameVer = myModuleFullName()

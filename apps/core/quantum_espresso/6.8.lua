@@ -7,7 +7,7 @@ This module sets up your environment to access Quantum Esspresso
 executables using the usual commands.
 
    Installed by: E. Broadway, EPCC
-   Installation date: 7th June 2023
+   Installation date: 26th June 2024
 ]])
 
 local pkgName = myModuleName()
