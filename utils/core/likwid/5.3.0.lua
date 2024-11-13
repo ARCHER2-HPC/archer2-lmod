@@ -16,7 +16,10 @@ local pkgName = myModuleName()
 local pkgNameVer = myModuleFullName()
 local pkgNameBase = pathJoin("/work/y07/shared/utils/core", pkgName)
 local pkgVersionBase = pathJoin("/work/y07/shared/utils/core", pkgNameVer)
+local binDir = pathJoin(pkgVersionBase, "bin")
 
-prepend_path("PATH", pathJoin(pkgVersionBase, "bin"))
+setenv("LIKWID_DIR", pkgVersionBase)
+prepend_path("PATH", binDir)
+
 
 family("likwid")
