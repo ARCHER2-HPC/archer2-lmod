@@ -6,12 +6,13 @@ This module defines the system paths and environment variables
 needed to use the Code_Saturne 8.0.3 CCE 15.0.0 build. Once the
 module is loaded the executable will be available as 'code_saturne'.
 
-  Installed by: E. Belikov, EPCC
-  Date: 07 August 2024
+  Installed by: W. Lucas, EPCC
+  Date: 26 November 2024
 ]])
 
 local pkgNameVer = myModuleFullName()
-local base = pathJoin("/work/y07/shared/apps/core", pkgNameVer)
+local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
+local base = pathJoin(modbase, "apps/core", pkgNameVer)
 
 load("PrgEnv-cray")
 load("craype-network-ucx")

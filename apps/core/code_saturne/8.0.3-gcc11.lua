@@ -7,11 +7,12 @@ needed to use the Code_Saturne 8.0.3 GCC 11.2.0 build. Once the
 module is loaded the executable will be available as 'code_saturne'.
 
   Installed by: W. Lucas, EPCC
-  Date: 30 July 2024
+  Date: 26 November 2024
 ]])
 
 local pkgNameVer = myModuleFullName()
-local base = pathJoin("/work/y07/shared/apps/core", pkgNameVer)
+local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
+local base = pathJoin(modbase, "apps/core", pkgNameVer)
 
 load("PrgEnv-gnu")
 load("craype-network-ucx")
