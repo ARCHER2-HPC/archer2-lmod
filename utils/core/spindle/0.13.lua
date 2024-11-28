@@ -9,13 +9,15 @@ Build instructions: https://github.com/hpc-uk/build-instructions/blob/main/utils
 Run instructions: https://github.com/hpc-uk/build-instructions/blob/main/utils/spindle/run_spindle_0.13_archer2_gcc11.md
 
    - Installed by: M. Bareford, EPCC"
-   - Date: 28 July 2023\n"
+   - Date: 28 Nov 2024\n"
 ]])
+
+local modBase = os.getenv("EPCC_SOFTWARE_DIR")
 
 local pkgName = myModuleName()
 local pkgNameVer = myModuleFullName()
-local pkgNameBase = pathJoin("/work/y07/shared/utils/core", pkgName)
-local pkgVersionBase = pathJoin("/work/y07/shared/utils/core", pkgNameVer)
+local pkgNameBase = pathJoin(modBase, "utils/core", pkgName)
+local pkgVersionBase = pathJoin(modBase, "utils/core", pkgNameVer)
 
 prepend_path("PATH", pathJoin(pkgVersionBase, "bin"))
 prepend_path("CPATH", pathJoin(pkgVersionBase, "include"))
