@@ -10,7 +10,7 @@ installation for OpenFOAM v10
 See https://openfoam.org/news/v10-patch/
 
 Once this module has been loaded you will be
-to use the environment variable FOAM_INST_DIR to e.g.,
+to use the environment variable FOAM_INSTALL_DIR to e.g.,
 $ source ${FOAM_INSTALL_DIR}/etc/bashrc
 
 This source command will set all the apppropriate
@@ -27,7 +27,8 @@ always_load("PrgEnv-gnu")
 
 -- FOAM_INSTALL_DIR is required.
 
+local pkgRoot    = os.getenv("EPCC_SOFTWARE_DIR")
 local pkgNameVer = myModuleFullName()
-local pkgInstall = pathJoin("/work/y07/shared/apps/core", pkgNameVer)
+local pkgInstall = pathJoin(pkgRoot, "apps/core", pkgNameVer)
 
 setenv("FOAM_INSTALL_DIR", pathJoin(pkgInstall, "OpenFOAM-10"))
