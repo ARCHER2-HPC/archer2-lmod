@@ -4,10 +4,14 @@ Sets up the paths for Intel Math Kernel Library
 
 unload("cray-libsci")
 
+local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
+
+local base = pathJoin(modbase, "apps/core")
+
 local pkgName = myModuleName()
 local pkgNameVer = myModuleFullName()
-local pkgNameBase = pathJoin("/work/y07/shared/libs/core", pkgName)
-local pkgVersionBase = pathJoin("/work/y07/shared/libs/core", pkgNameVer)
+local pkgNameBase = pathJoin(base, pkgName)
+local pkgVersionBase = pathJoin(base, pkgNameVer)
 
 local arch = "intel64"
 local mkl_root = pkgVersionBase

@@ -11,21 +11,20 @@ by using the 'gmx' command.
    - Date: 22 April 2024"
 
 ]])
--- load("cpe/22.12")
-load("cray-python/3.9.13.1")
-load("cray-fftw/3.3.10.3")
 
-pushenv("SLURM_CPU_FREQ_REQ","2250000")
+family("gromacs")
 
-local pkgName = myModuleName()
+depends_on("cray-python/3.9.13.1")
+depends_on("cray-fftw/3.3.10.3")
+
+
+local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
 local pkgNameVer = myModuleFullName()
-local pkgNameBase = pathJoin("/work/y07/shared/apps/core", pkgName)
-local pkgVersionBase = pathJoin("/work/y07/shared/apps/core", pkgNameVer)
+local base = pathJoin(modbase, "apps/core", pkgNameVer)
 
 prepend_path("LD_LIBRARY_PATH", os.getenv("CRAY_LD_LIBRARY_PATH"))
-
 -- Adapted from $GMXPREFIX/bin/GMXRC.bash
-local GMXPREFIX = pkgVersionBase
+local GMXPREFIX = base
 setenv("GMX_DIR", GMXPREFIX)
 setenv("GROMACS_DIR", GMXPREFIX)
 local GMXBIN = pathJoin(GMXPREFIX, "bin")
@@ -45,5 +44,4 @@ prepend_path("PATH", GMXBIN)
 prepend_path("MANPATH", GMXMAN)
 setenv("GMXLIB", pathJoin(GMXPREFIX, "share/gromacs/top"))
 
-
-family("gromacs")
+pushenv("SLURM_CPU_FREQ_REQ","2250000")

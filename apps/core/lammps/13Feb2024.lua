@@ -18,8 +18,9 @@ family("lammps")
 -- always_load("cpe/22.12")
 depends_on("cray-fftw/3.3.10.3")
 
+local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
 local pkgNameVer = myModuleFullName()
-local base = pathJoin("/work/y07/shared/apps/core", pkgNameVer)
+local base = pathJoin(modbase, "apps/core", pkgNameVer)
 
 prepend_path("LD_LIBRARY_PATH", os.getenv("CRAY_LD_LIBRARY_PATH"))
 prepend_path("LD_LIBRARY_PATH", pathJoin(base, "lib64"))

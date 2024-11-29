@@ -43,10 +43,14 @@ cray-hdf5-parallel/1.12.2.1
    Maintained by: A. R. Turner, EPCC
 ]])
 
+local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
+
+local base = pathJoin(modbase, "apps/core")
+
 local pkgName = myModuleName()
 local pkgNameVer = myModuleFullName()
-local pkgNameBase = pathJoin("/work/y07/shared/apps/core", pkgName)
-local pkgVersionBase = pathJoin("/work/y07/shared/apps/core", pkgNameVer)
+local pkgNameBase = pathJoin(base, pkgName)
+local pkgVersionBase = pathJoin(base, pkgNameVer)
 
 load("PrgEnv-gnu")
 load("cray-libsci/22.12.1.1")

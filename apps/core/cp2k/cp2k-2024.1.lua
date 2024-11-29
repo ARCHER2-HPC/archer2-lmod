@@ -61,11 +61,11 @@ load("PrgEnv-gnu/8.3.3")
 load("mkl/2023.0.0")
 load("cray-fftw/3.3.10.3")
 
-local pkgName = myModuleName()
+local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
+
 local pkgNameVer = myModuleFullName()
-local pkgNameBase = pathJoin("/work/y07/shared/apps/core", pkgName)
 local buildVariant = "toolchain_cray_default+mkl+plumed"
-local pkgVersionBase = pathJoin("/work/y07/shared/apps/core", pkgNameVer, buildVariant)
+local pkgVersionBase = pathJoin(modbase, "apps/core", pkgNameVer, buildVariant)
 
 setenv("CP2K_DIR", pkgVersionBase)
 
