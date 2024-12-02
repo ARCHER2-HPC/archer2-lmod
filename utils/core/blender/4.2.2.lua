@@ -7,7 +7,9 @@ Installed: 24th Sept 2024 (s.lemaire@epcc.ed.ac.uk)
 
 load("cray-python")
 
+
 local pkgNameVer = myModuleFullName()
-local base = pathJoin("/work/y07/shared/utils/core", pkgNameVer)
+local modbase = os.getenv("EPCC_SOFTWARE_DIR")
+local base = pathJoin(modbase, "utils/core", pkgNameVer)
 
 prepend_path("PATH", base)
