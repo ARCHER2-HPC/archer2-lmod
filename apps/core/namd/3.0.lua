@@ -22,12 +22,11 @@ load("cray-fftw")
 
 pushenv("SLURM_CPU_FREQ_REQ","2250000")
 
-local pkgName = myModuleName()
+local epccSoftwareDir = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
 local pkgNameVer = myModuleFullName()
-local pkgNameBase = pathJoin("/work/y07/shared/apps/core", pkgName)
-local pkgVersionBase = pathJoin("/work/y07/shared/apps/core", pkgNameVer)
+local pkgVersionBase = pathJoin(epccSoftwareDir, "apps/core", pkgNameVer)
 
 prepend_path("PATH", pathJoin(pkgVersionBase, "bin"))
-prepend_path("LD_LIBRARY_PATH", "/work/y07/shared/apps/core/namd/tcl/8.5.9/lib")
+prepend_path("LD_LIBRARY_PATH", pathJoin(epccSoftwareDir, "apps/core/namd/tcl/8.5.9/lib"))
 
 family("namd")
