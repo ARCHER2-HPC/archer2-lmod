@@ -24,8 +24,9 @@ load("craype-dl-plugin-py3/22.12.1")
 local pythonVersion = "3.9.13.1"
 local pythonLabel = "python3.9"
 
+local pkgBase = os.getenv("EPCC_SOFTWARE_DIR")
 local pkgNameVer = myModuleFullName()
-local pkgVersionBase = pathJoin("/work/y07/shared/python/core", pkgNameVer)
+local pkgVersionBase = pathJoin(pkgBase, "python/core", pkgNameVer)
 
 local pythonBin = pathJoin(pkgVersionBase, "python", pythonVersion, "bin")
 local pythonLib = pathJoin(pkgVersionBase, "python", pythonVersion, "lib")

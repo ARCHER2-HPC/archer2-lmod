@@ -8,7 +8,7 @@ Simply run "pip list" to see the full package list.
 Build instructions: https://github.com/hpc-uk/build-instructions/blob/main/pyenvs/tensorflow/build_tensorflow_2.13.0_archer2.md
 
   Installed by: Michael Bareford, EPCC
-  Date: 25 August 2023
+  Date: 02 December 2024
 ]])
 
 load("cray-python/3.9.13.1")
@@ -16,8 +16,9 @@ load("cray-python/3.9.13.1")
 local pythonVersion = "3.9.13.1"
 local pythonLabel = "python3.9"
 
+local pkgBase = os.getenv("EPCC_SOFTWARE_DIR")
 local pkgNameVer = myModuleFullName()
-local pkgVersionBase = pathJoin("/work/y07/shared/python/core", pkgNameVer)
+local pkgVersionBase = pathJoin(pkgBase, "python/core", pkgNameVer)
 
 local pythonBin = pathJoin(pkgVersionBase, "python", pythonVersion, "bin")
 local pythonLib = pathJoin(pkgVersionBase, "python", pythonVersion, "lib")

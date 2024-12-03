@@ -27,8 +27,8 @@ service and they may direct you to seek help from external parties.
 local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
 
 -- Modules from CSE
-prepend_path("MODULEPATH", pathJoin(modbase, "archer2-lmod/others/core")
-prepend_path("MODULEPATH", pathJoin(modbase, "archer2-lmod/libs/other")
+prepend_path("MODULEPATH", pathJoin(modbase, "archer2-lmod/others/core"))
+prepend_path("MODULEPATH", pathJoin(modbase, "archer2-lmod/libs/other"))
 
 -- Modules from other sources
 prepend_path("MODULEPATH", "/work/y23/shared/scalasca/modulefiles")

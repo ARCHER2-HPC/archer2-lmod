@@ -6,7 +6,7 @@ unload("cray-libsci")
 
 local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
 
-local base = pathJoin(modbase, "apps/core")
+local base = pathJoin(modbase, "libs/core")
 
 local pkgName = myModuleName()
 local pkgNameVer = myModuleFullName()

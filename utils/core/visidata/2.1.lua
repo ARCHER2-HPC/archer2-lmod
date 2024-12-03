@@ -13,8 +13,10 @@ lightweight utility which can handle millions of rows with ease.
 
 always_load("cray-python")
 
+local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
+
 local pkgNameVer = myModuleFullName()
-local pkgVersionBase = pathJoin("/work/y07/shared/utils/core", pkgNameVer)
+local pkgVersionBase = pathJoin(modbase, "utils/core", pkgNameVer)
 
 prepend_path("PATH", pathJoin(pkgVersionBase, "bin"))
 prepend_path("PYTHONPATH", pathJoin(pkgVersionBase, "lib/python3.8/site-packages"))

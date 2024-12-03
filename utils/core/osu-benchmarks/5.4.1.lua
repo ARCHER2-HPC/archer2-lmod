@@ -6,10 +6,11 @@ OSU MPI micro-benchmarks
    - Date: 17 August 2023\n"
 ]])
 
-local pkgName = myModuleName()
+
+local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
+
 local pkgNameVer = myModuleFullName()
-local pkgNameBase = pathJoin("/work/y07/shared/utils/core", pkgName)
-local pkgVersionBase = pathJoin("/work/y07/shared/utils/core", pkgNameVer)
+local pkgVersionBase = pathJoin(modbase, "apps/core", pkgNameVer)
 
 local path_extension = "libexec/osu-micro-benchmarks/mpi"
 
