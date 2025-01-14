@@ -14,6 +14,7 @@ local softwarebase = "/mnt/lustre/a2fs-work4/work/y07/shared"
 setenv("EPCC_SOFTWARE_DIR", softwarebase)
 
 -- Set default module locations (utils/core already specified in startup scripts)
+remove_path("MODULEPATH", "/work/y07/shared/archer2-lmod/utils/core"):
 prepend_path("MODULEPATH", pathJoin(softwarebase, "archer2-lmod/apps/core"))
 prepend_path("MODULEPATH", pathJoin(softwarebase, "archer2-lmod/libs/core"))
 prepend_path("MODULEPATH", pathJoin(softwarebase, "archer2-lmod/utils/core"))
