@@ -13,7 +13,7 @@ Date: 18 Oct 2021
 ]])
 
 local pkgNameVer = myModuleFullName()
-local base = pathJoin("/work/y07/shared/utils/core", pkgNameVer, "envs/ncl")
+local base = pathJoin("/work/y07/shared/utils/core", pkgNameVer)
 
 setenv("NCARG_ROOT", base)
 prepend_path("PATH", pathJoin(base, "bin"))
