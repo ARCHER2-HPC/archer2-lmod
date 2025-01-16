@@ -13,14 +13,13 @@ executables using the usual commands.
 load("PrgEnv-gnu")
 load("tcl/8.6.13")
 
-local pkgName = myModuleName()
+local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
 local pkgNameVer = myModuleFullName()
-local pkgNameBase = pathJoin("/work/y07/shared/apps/core", pkgName)
-local pkgVersionBase = pathJoin("/work/y07/shared/apps/core", pkgNameVer)
+local base = pathJoin(modbase, "apps/core", pkgNameVer)
 
-prepend_path("PATH", pathJoin(pkgVersionBase, "chemsh-tcl/bin"))
-setenv("LIBTCL", "/work/y07/shared/utils/core/tcl/8.6.13/lib/libtcl8.6.so")
-setenv("TCLLIBPATH", pathJoin(pkgVersionBase, "chemsh-tcl/tcl"))
+prepend_path("PATH", pathJoin(base, "chemsh-tcl/bin"))
+setenv("LIBTCL", "/mnt/lustre/a2fs-work4/work/y07/shared/utils/core/tcl/8.6.13/lib/libtcl8.6.so")
+setenv("TCLLIBPATH", pathJoin(base, "chemsh-tcl/tcl"))
  
 family("tclchemshell")
 

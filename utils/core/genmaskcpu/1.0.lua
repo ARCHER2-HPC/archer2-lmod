@@ -12,8 +12,11 @@ on a single node.
 
 prereq("cray-python")
 
+
+local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
+
 local pkgNameVer = myModuleFullName()
-local pkgVersionBase = pathJoin("/work/y07/shared/utils/core", pkgNameVer)
+local pkgVersionBase = pathJoin(modbase, "apps/core", pkgNameVer)
 
 prepend_path("PATH", pkgVersionBase)
 

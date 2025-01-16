@@ -27,10 +27,11 @@ load("cray-python")
 
 pushenv("SLURM_CPU_FREQ_REQ","2250000")
 
-local pkgNameBase = "/work/y07/shared/apps/core/namd"
-local pkgVersionBase = "/work/y07/shared/apps/core/namd/3.0-gpu"
+local epccSoftwareDir = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
+local pkgNameVer = myModuleFullName()
+local pkgVersionBase = pathJoin(epccSoftwareDir, "apps/core", "namd/3.0-gpu")
 
 prepend_path("PATH", pathJoin(pkgVersionBase, "bin"))
-prepend_path("LD_LIBRARY_PATH", "/work/y07/shared/apps/core/namd/tcl/8.6.13/lib")
+prepend_path("LD_LIBRARY_PATH", pathJoin(epccSoftwareDir, "apps/core/namd/tcl/8.5.9/lib"))
 
 family("namd")

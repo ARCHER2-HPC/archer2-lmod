@@ -48,8 +48,11 @@ setenv("OMP_PLACES", "cores")
 setenv("OMP_PROC_BIND", "close")
 setenv("FI_MR_CACHE_MAX_COUNT", "0")
 
-local basepath = "/work/y07/shared/apps/core/onetep/6.1.43.0"
- 
+local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
+
+local pkgNameVer = myModuleFullName()
+local basepath = pathJoin(modbase, "apps/core/onetep/6.1.43.0")
+
 prepend_path("PATH", pathJoin(basepath, "bin_GCC-LibSci"))
 
 setenv("PSPOT_DIR", pathJoin(basepath, "pseudo"))

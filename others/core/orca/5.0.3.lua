@@ -8,9 +8,11 @@ ORCA is an ab initio quantum chemistry program package that contains modern elec
    - Date: 4 January 2023"
 ]])
 
+local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
+
 local pmiLibPath = "/usr/lib64"
-local ompi_dir = "/work/y07/shared/libs/dev/openmpi/4.1.5-ofi-gcc11"
-local orcadir = "/work/y07/shared/apps/core/orca/5.0.3"
+local ompi_dir = pathJoin(modbase, "/libs/dev/openmpi/4.1.5-ofi-gcc11")
+local orcadir = pathJoin(modbase, "/apps/core/orca/6.0.0")
 
 setenv("OPENMPI_DIR", ompi_dir)
 

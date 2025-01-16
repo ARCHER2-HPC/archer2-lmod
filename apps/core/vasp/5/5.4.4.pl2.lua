@@ -30,11 +30,16 @@ load("gcc/10.3.0")
 load("cray-fftw")
 prepend_path("LD_LIBRARY_PATH", os.getenv("CRAY_LD_LIBRARY_PATH"))
 -- setenv("UCX_IB_REG_METHODS", "direct")
+--
+
+local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
+
+local base = pathJoin(modbase, "apps/core")
 
 local pkgName = myModuleName()
 local pkgNameVer = myModuleFullName()
-local pkgNameBase = pathJoin("/work/y07/shared/apps/core", pkgName)
-local pkgVersionBase = pathJoin("/work/y07/shared/apps/core", pkgNameVer)
+local pkgNameBase = pathJoin(base, pkgName)
+local pkgVersionBase = pathJoin(base, pkgNameVer)
 
 prepend_path("PATH", pathJoin(pkgVersionBase, "bin"))
 setenv("VASP", pkgVersionBase)

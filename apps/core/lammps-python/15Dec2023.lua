@@ -24,8 +24,9 @@ depends_on("lammps/15Dec2023")
 
 LmodMessage(myModuleName())
 LmodMessage(myModuleFullName())
+local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
 local pkgNameVer = myModuleFullName()
-local base = pathJoin("/work/y07/shared/apps/core", pkgNameVer)
+local base = pathJoin(modbase, "apps/core", pkgNameVer)
 
 prepend_path("LD_PRELOAD", "/opt/cray/pe/lib64/libsci_cray_mp.so.5")
 

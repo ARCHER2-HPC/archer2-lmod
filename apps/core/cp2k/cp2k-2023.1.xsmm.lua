@@ -26,10 +26,10 @@ load("PrgEnv-gnu")
 load("cray-fftw")
 load("mkl")
 
-local pkgName = myModuleName()
+local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
+
 local pkgNameVer = myModuleFullName()
-local pkgNameBase = pathJoin("/work/y07/shared/apps/core", pkgName)
-local pkgVersionBase = pathJoin("/work/y07/shared/apps/core", pkgNameVer)
+local pkgVersionBase = pathJoin(modbase, "apps/core", pkgNameVer)
 
 setenv("CP2K_DIR", pkgVersionBase)
 setenv("CP2K_DATA", pathJoin(pkgVersionBase, "data"))

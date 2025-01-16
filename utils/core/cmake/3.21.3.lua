@@ -7,8 +7,11 @@ Date: 5 October 2021
 
 ]])
 
+
+local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
+
 local pkgNameVer = myModuleFullName()
-local pkgVersionBase = pathJoin("/work/y07/shared/utils/core", pkgNameVer)
+local pkgVersionBase = pathJoin(modbase, "apps/core", pkgNameVer)
 
 prepend_path("PATH", pathJoin(pkgVersionBase, "bin"))
 prepend_path("CPATH", pathJoin(pkgVersionBase, "include"))

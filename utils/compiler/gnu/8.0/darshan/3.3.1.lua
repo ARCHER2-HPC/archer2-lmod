@@ -9,7 +9,9 @@ For details of Darshan on ARCHER2 see:
 https://docs.archer2.ac.uk/tools/darshan/
 ]])
 
-local darshan_root = "/work/y07/shared/utils/compiler/gnu/8.0/darshan-runtime"
+local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
+
+local darshan_root = pathJoin(modbase, "/utils/compiler/gnu/8.0/darshan-runtime")
 
 setenv("DARSHAN_ROOT", darshan_root)
 setenv("DARSHAN_DIR", darshan_root)

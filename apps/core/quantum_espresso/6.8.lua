@@ -10,11 +10,17 @@ executables using the usual commands.
    Installation date: 26th June 2024
 ]])
 
+local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
+local base = pathJoin(modbase, "apps/core")
+
 local pkgName = myModuleName()
 local pkgNameVer = myModuleFullName()
-local pkgNameBase = pathJoin("/work/y07/shared/apps/core", pkgName)
-local pkgVersionBase = pathJoin("/work/y07/shared/apps/core", pkgNameVer)
+local pkgNameBase = pathJoin(base, pkgName)
+local pkgVersionBase = pathJoin(base, pkgNameVer)
 
- 
+load("PrgEnv-gnu")
+load("cray-fftw")
+load("cray-hdf5-parallel") 
+
 prepend_path("PATH", pathJoin(pkgVersionBase, "bin"))
 family("quantum_espresso")

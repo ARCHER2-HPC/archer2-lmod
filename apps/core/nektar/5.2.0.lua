@@ -17,10 +17,12 @@ Build instructions: https://github.com/hpc-uk/build-instructions/blob/main/apps/
 always_load("PrgEnv-gnu")
 load("cray-fftw")
 
+local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
+
 local pkgName = myModuleName()
 local pkgNameVer = myModuleFullName()
-local pkgNameBase = pathJoin("/work/y07/shared/apps/core", pkgName)
-local pkgVersionBase = pathJoin("/work/y07/shared/apps/core", pkgNameVer)
+local pkgNameBase = pathJoin(modbase, "/apps/core", pkgName)
+local pkgVersionBase = pathJoin(modbase, "/apps/core", pkgNameVer)
 
 setenv("NEK_DIR", pkgVersionBase)
 
