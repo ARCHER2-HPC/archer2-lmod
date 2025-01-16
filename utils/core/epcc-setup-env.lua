@@ -61,5 +61,9 @@ set_shell_function('showquota', bashStr, bashStr)
 --    2024-03-28: Removed for all jobs
 --    2024-04-24: Added for all jobs (to analyse fs3 use)
 --    2024-04-24: Removed for all jobs (to analyse fs3 use)
+--    2024-11-14 08:00: Added for all jobs
+--    2024-11-15 08:00: Removed for all jobs
+--    2024-11-25 08:00: Added for all jobs
+--    2024-11-26 08:18: removed for all jobs
 -- always_load("darshan")
 

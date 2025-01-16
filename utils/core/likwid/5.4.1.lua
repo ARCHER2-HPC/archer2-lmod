@@ -18,12 +18,12 @@ Note: the ARCHER2 CSE team is currently trialling usage of LIKWID and will provi
   Date: 16 Dec. 2024
 ]])
 
-
 local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
 
 local pkgName = myModuleName()
 local pkgNameVer = myModuleFullName()
 local pkgVersionBase = pathJoin(modbase, "utils/core", pkgNameVer)
+
 local binDir = pathJoin(pkgVersionBase, "bin")
 
 setenv("LIKWID_DIR", pkgVersionBase)
