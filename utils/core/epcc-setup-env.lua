@@ -21,7 +21,7 @@ prepend_path("MODULEPATH", pathJoin(softwarebase, "archer2-lmod/python/pyenvs"))
 prepend_path("MODULEPATH", pathJoin(softwarebase, "archer2-lmod/training/core"))
 
 -- Make default binaries/scripts available
-prepend_path("PATH", pathJoin(softwarebase, "archer2-lmod/utils/core/bin"))
+prepend_path("PATH", pathJoin(softwarebase, "utils/core/bin"))
 
 -- Set any env vars
 --setenv("SBATCH_EXPORT", "MODULEPATH,SBATCH_EXPORT")
