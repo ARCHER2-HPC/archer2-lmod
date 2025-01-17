@@ -1,4 +1,4 @@
-Help([[
+help([[
 cp2k-2024.3
 ===========
 This module sets up your environment to access a central install of CP2K 2024.3

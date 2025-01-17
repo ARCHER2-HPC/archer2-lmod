@@ -12,7 +12,7 @@ local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
 
 local pmiLibPath = "/usr/lib64"
 local ompi_dir = pathJoin(modbase, "/libs/dev/openmpi/4.1.5-ofi-gcc11")
-local orcadir = pathJoin(modbase, "/apps/core/orca/6.0.0")
+local orcadir = pathJoin(modbase, "/apps/core/orca/5.0.3")
 
 setenv("OPENMPI_DIR", ompi_dir)
 
