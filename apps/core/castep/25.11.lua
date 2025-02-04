@@ -1,8 +1,8 @@
 help([[
-CASTEP 24.1
+CASTEP 25.11
 ===========
  
-This module sets up your environment to access CASTEP 24.1.
+This module sets up your environment to access CASTEP 25.11.
 Once loaded you can access the CASTEP executable using the
 name 'castep.mpi'. This module also includes the CASTEP tools.
 The serial CASTEP version is also available as 'castep.serial'.
@@ -12,7 +12,7 @@ the SAFE. see:
   * https://epcced.github.io/safe-docs/safe-for-users/#how-to-request-access-to-a-package-group\n
  
 Installed by: A. Turner, EPCC
-Date: 5 March 2024
+Date: 4 February 2025
 
 Modules loaded at compile time:
 
