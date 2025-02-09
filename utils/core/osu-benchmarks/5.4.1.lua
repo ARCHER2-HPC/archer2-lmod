@@ -10,7 +10,7 @@ OSU MPI micro-benchmarks
 local modbase = os.getenv("EPCC_SOFTWARE_DIR") or "/work/y07/shared"
 
 local pkgNameVer = myModuleFullName()
-local pkgVersionBase = pathJoin(modbase, "apps/core", pkgNameVer)
+local pkgVersionBase = pathJoin(modbase, "utils/core", pkgNameVer)
 
 local path_extension = "libexec/osu-micro-benchmarks/mpi"
 
